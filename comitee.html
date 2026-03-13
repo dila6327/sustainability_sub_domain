@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sustainability Committee</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="/script.js" defer></script>
+<link rel="stylesheet" href="/style.css">
+<style>
+/* HEADER / NAVBAR */
+header, .navbar-main {
+    width: 100%;
+    z-index: 1000;
+}
+
+/* BODY & MAIN */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f9;
+    margin: 0;
+}
+main {
+    margin-top: calc(10px); /* 80px navbar + 50px header/logo area approx */
+    padding: 20px 15px 50px;
+}
+
+/* SECTION TITLES */
+.section-title {
+    text-align: center;
+    font-weight: 700;
+    margin: 40px 0 20px;
+    color: #1e3a8a;
+}
+
+/* INTRO TEXT */
+.intro-text {
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    line-height: 1.7;
+    color: #334155;
+}
+.intro-text p {
+    margin: 0 0 15px;
+}
+.intro-text a {
+    color: #1e3a8a;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* COMMITTEE GRID */
+.committee-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* CARD STYLES */
+.card-custom {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 320px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    text-align: center;
+}
+.card-custom:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+.card-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+.card-body {
+    padding: 15px 10px 20px;
+}
+.card-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e3a8a;
+}
+.card-pos {
+    font-size: 14px;
+    color: #475569;
+    margin-top: 4px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .committee-grid {justify-content: center;}
+    .card-custom{width: 100%;}
+}
+</style>
+</head>
+<body>
+
+<header>
+
+<a href="https://asoiu.edu.az/" class="logo-section">
+
+<div class="logo-img">
+<img src="https://asoiu.edu.az/public/user/assets/img/nav_Logo_b.png" alt="ASOIU Logo">
+</div>
+
+<div class="logo-text">
+<h1>ASOIU</h1>
+<p>Sustainability</p>
+</div>
+
+</a>
+
+<div class="header-actions">
+
+
+<a href="https://asoiu.edu.az/upload/sustainability/sdg/ASOIU%20SDG%20REPORT%20ON%20SUSTAINABILITY.pdf" class="report-btn">Sustainability Report</a>
+
+<button class="menu-toggle" id="menuToggle">
+<i class="fas fa-bars"></i>
+</button>
+
+</div>
+
+</header>
+
+    <nav class="navbar-main">
+        <div class="navbar-rows">
+            <div class="navbar-row top">
+                <a href="Plan.html" class="nav-link">Plan</a>
+                <a href="strategy.html" class="nav-link">Strategy</a>
+                <a href="education.html" class="nav-link">Education</a>
+                <a href="research.html" class="nav-link">Research</a>
+                <a href="comitee.html" class="nav-link">Committee</a>
+                <a href="activities.html" class="nav-link">Activities</a>
+                <a href="/Pilicies/policies.html" class="nav-link">Policies</a>
+            </div>
+
+            <div class="navbar-row">
+                <a href="trainings.html" class="nav-link">Trainings</a>
+                <a href="alumni.html" class="nav-link">Alumni</a>
+                <a href="assesment.html" class="nav-link">Assessment</a>
+
+                <div class="dropdown">
+                    <button class="nav-link dropdown-trigger" id="sdgBtn">SDG's at ASOIU</button>
+                    <div class="dropdown-menu sdg-menu" id="sdgMenu">
+                        <div class="sdg-grid" id="sdgGrid"></div>
+                        <div class="sdg-footer">
+                            <a href="all_sdgs.html">View All SDGs</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="nav-link dropdown-trigger" id="rankingsBtn">Rankings</button>
+                    <div class="dropdown-menu rankings-menu" id="rankingsMenu">
+                        <a href="#" class="rankings-item">UI GreenMetric</a>
+                        <a href="/QS_Sustainability/qs_sustainability.html" class="rankings-item">QS Sustainability</a>
+                        <a href="#" class="rankings-item">THE Impact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+<main>
+    <!-- INTRO TEXT -->
+    <div class="intro-text">
+        <p>
+        The administrative leadership of Azerbaijan State Oil and Industry University including the board of trustees and president, has set a strategic goal of developing and implementing a sustainability strategy. 
+        The Sustainability Committee and Sub-committees aim to improve collaboration throughout the governance structure, give direction, and develop high-level organizational change initiatives necessary to continue advancing towards a sustainable university and achieving goals stated in the Sustainability Plan. 
+        They will give feedback, assess institutional plans, objectives, and targets, and create a sustainability strategy for senior leadership approval. This includes developing and managing annual and multi-year sustainability plans for community engagement and services, recommending how sustainability should be integrated into institutional plans, advising on a change framework, tracking and evaluating progress, and advocating for the institutional integration of sustainability principles and ongoing initiatives into all aspects of university operations.
+        </p>
+        <p>
+        For more information, please contact the Sustainable Development Office: 📧 <a href="mailto:sustainability@asoiu.edu.az">sustainability@asoiu.edu.az</a>
+        </p>
+    </div>
+
+    <!-- COMMITTEE GRIDS -->
+    <h2 class="section-title">Chairman</h2>
+    <div class="committee-grid" id="grid-chairman"></div>
+
+    <h2 class="section-title">Co-chairmen</h2>
+    <div class="committee-grid" id="grid-cochairmen"></div>
+
+    <h2 class="section-title">Members</h2>
+    <div class="committee-grid" id="grid-members"></div>
+</main>
+
+<footer>
+        <div class="footer-top">
+            <div class="footer-grid">
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                        <div class="footer-section brand-info">
+                            <img src="https://asoiu.edu.az/public/user/assets/img/adnsu_n_a_1.png" alt="ASOIU Logo"
+                                class="footer-logo">
+                            <p>Shaping industry leaders through engineering excellence</p>
+                            <div class="social-icons">
+                                <a href="https://www.facebook.com/Azii1920.ADNSU/?locale=ru_RU"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a
+                                    href="https://www.linkedin.com/school/azerbaijan-state-university-of-oil-and-industry/posts/?feedView=all"><i
+                                        class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.instagram.com/asoiu_officialpage/"><i
+                                        class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+
+                        <div class="footer-section marg">
+                            <h4>Quick links</h4>
+                            <ul>
+                                <li><a href="#">News</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                        <div class="footer-section contact-info">
+                            <h4>Contact</h4>
+                            <ul>
+                                <li><i class="fas fa-map-marker-alt"></i> Baku, Azadliq Avenue, 20</li>
+                                <li><i class="fas fa-envelope"></i> sustainability@asoiu.edu.az</li>
+                                <li><i class="fas fa-phone"></i> +994 12 493 45 57</li>
+                                <li><i class="fas fa-fax"></i> +994 12 598 29 41</li>
+                                <li><i class="fas fa-mail-bulk"></i> Post code: AZ1010</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+
+    </footer>
+
+<script>
+// Placeholder API
+const API_URL = "https://jsonplaceholder.typicode.com/use";
+
+const fallbackData = [
+    { id:1, name:"Rufat Azizov", position:"Associate Professor, Rector", role:"chairman", img:"https://asoiu.edu.az/upload/news/93597e6ec3b045204511a0ab030a4fb9.jpeg", bio:"Full biography about Rufat Azizov..." },
+    { id:2, name:"Gasim Mammadov", position:"Associate Professor, Vice-rector for academic affairs", role:"co-chairman", img:"https://asoiu.edu.az/oil_mechanical_engineering/upload/teacher/qasimkk.JPG", bio:"Full biography about Gasim Mammadov..." },
+    { id:3, name:"Latafat Gardashova", position:"Professor, Vice-rector for scientific affairs", role:"co-chairman", img:"https://via.placeholder.com/400x400", bio:"Full biography about Latafat Gardashova..." },
+    { id:4, name:"Tarek Elkholy", position:"Professor, Head of Rankings and Research", role:"member", img:"https://via.placeholder.com/400x400", bio:"Full biography about Tarek Elkholy..." },
+    { id:5, name:"Hanene Boussi", position:"Professor, Vice-rector of the University of Tunis", role:"member", img:"https://via.placeholder.com/400x400", bio:"Full biography about Hanene Boussi..." },
+    { id:6, name:"Nur Zahdi Aldin", position:"Director of Quality Management", role:"member", img:"https://via.placeholder.com/400x400", bio:"Full biography about Nur Zahdi Aldin..." }
+];
+
+async function getData() {
+    try {
+        const res = await fetch(API_URL);
+        if(!res.ok) throw new Error("API failed");
+        const data = await res.json();
+        const mapped = data.slice(0,6).map((u,i)=>({
+            id: u.id,
+            name: u.name,
+            position: i===0 ? "Associate Professor, Rector" : (i<3 ? "Co-chairman" : "Committee Member"),
+            role: i===0 ? "chairman" : (i<3 ? "co-chairman" : "member"),
+            img: `https://via.placeholder.com/400x400`,
+            bio: `Auto-generated biography for ${u.name}.`
+        }));
+        localStorage.setItem("committeeData", JSON.stringify(mapped));
+        return mapped;
+    } catch {
+        console.log("Using fallback data");
+        localStorage.setItem("committeeData", JSON.stringify(fallbackData));
+        return fallbackData;
+    }
+}
+
+function render(data){
+    const chairmanGrid = document.getElementById("grid-chairman");
+    const cochairGrid = document.getElementById("grid-cochairmen");
+    const memberGrid = document.getElementById("grid-members");
+
+    chairmanGrid.innerHTML="";
+    cochairGrid.innerHTML="";
+    memberGrid.innerHTML="";
+
+    data.forEach(person=>{
+        const card = document.createElement("div");
+        card.className="card-custom";
+        card.onclick=()=> window.location.href=`info.html?id=${person.id}`;
+        card.innerHTML=`
+            <img src="${person.img}" class="card-img">
+            <div class="card-body">
+                <div class="card-name">${person.name}</div>
+                <div class="card-pos">${person.position}</div>
+            </div>
+        `;
+
+        if(person.role==="chairman") chairmanGrid.appendChild(card);
+        else if(person.role==="co-chairman") cochairGrid.appendChild(card);
+        else memberGrid.appendChild(card);
+    });
+}
+
+getData().then(render);
+</script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASOIU Sustainable Development Goals</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <style>
+        
+
+        /* Hero Section */
+        .hero-section {
+            background-color: var(--primary-light);
+            padding: 60px 0;
+        }
+
+        /* Top Info Box */
+        .sdg-info-box {
+            border: 1px solid #dee2e6;
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        .icon-circle {
+            background: #e9ecef;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        /* SDG Card Styling */
+        .sdg-card {
+            border: none;
+            border-left: 5px solid #ccc;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            height: 100%;
+        }
+
+        .sdg-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        }
+
+        .sdg-number {
+            display: inline-block;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .learn-more {
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #495057;
+            transition: color 0.2s;
+        }
+
+        .learn-more:hover {
+            color: var(--primary);
+        }
+
+        /* Footer Button */
+        .btn-un {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+        }
+
+        .btn-un:hover {
+            background-color: #1e3241;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+   <header>
+
+<a href="https://asoiu.edu.az/" class="logo-section">
+
+<div class="logo-img">
+<img src="https://asoiu.edu.az/public/user/assets/img/nav_Logo_b.png" alt="ASOIU Logo">
+</div>
+
+<div class="logo-text">
+<h1>ASOIU</h1>
+<p>Sustainability</p>
+</div>
+
+</a>
+
+<div class="header-actions">
+
+
+<a href="https://asoiu.edu.az/upload/sustainability/sdg/ASOIU%20SDG%20REPORT%20ON%20SUSTAINABILITY.pdf" class="report-btn">Sustainability Report</a>
+
+<button class="menu-toggle" id="menuToggle">
+<i class="fas fa-bars"></i>
+</button>
+
+</div>
+
+</header>
+
+    <nav class="navbar-main">
+        <div class="navbar-rows">
+            <div class="navbar-row top">
+                <a href="Plan.html" class="nav-link">Plan</a>
+                <a href="strategy.html" class="nav-link">Strategy</a>
+                <a href="education.html" class="nav-link">Education</a>
+                <a href="research.html" class="nav-link">Research</a>
+                <a href="comitee.html" class="nav-link">Committee</a>
+                <a href="activities.html" class="nav-link">Activities</a>
+                <a href="/Pilicies/policies.html" class="nav-link">Policies</a>
+            </div>
+
+            <div class="navbar-row">
+                <a href="trainings.html" class="nav-link">Trainings</a>
+                <a href="alumni.html" class="nav-link">Alumni</a>
+                <a href="assesment.html" class="nav-link">Assessment</a>
+
+                <div class="dropdown">
+                    <button class="nav-link dropdown-trigger" id="sdgBtn">SDG's at ASOIU</button>
+                    <div class="dropdown-menu sdg-menu" id="sdgMenu">
+                        <div class="sdg-grid" id="sdgGrid"></div>
+                        <div class="sdg-footer">
+                            <a href="all_sdgs.html">View All SDGs</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="nav-link dropdown-trigger" id="rankingsBtn">Rankings</button>
+                    <div class="dropdown-menu rankings-menu" id="rankingsMenu">
+                        <a href="#" class="rankings-item">UI GreenMetric</a>
+                        <a href="/QS_Sustainability/qs_sustainability.html" class="rankings-item">QS Sustainability</a>
+                        <a href="#" class="rankings-item">THE Impact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section text-white mb-5">
+        <div class="container text-center text-md-start">
+            <p class="text-uppercase small fw-bold opacity-75 mb-2">Sustainability</p>
+            <h1 class="display-5 fw-bold">Sustainable Development Goals</h1>
+            <p class="lead opacity-90 col-lg-8">Explore ASOIU's commitment to the United Nations Sustainable Development Goals and our initiatives across all 17 goals.</p>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="sdg-info-box p-4 d-flex flex-column flex-md-row align-items-center shadow-sm">
+                    <div class="icon-circle mb-3 mb-md-0 me-md-4">
+                        <i class="bi bi-globe"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold mb-1">United Nations SDGs</h5>
+                        <p class="text-muted mb-0">ASOIU actively contributes to all 17 Sustainable Development Goals through education, research, community engagement, and sustainable operations. Each goal represents our commitment to creating a more equitable and sustainable future.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4" id="sdg-container">
+            </div>
+
+        <div class="row mt-5 mb-5">
+            <div class="col-12">
+                <div class="sdg-info-box p-4 d-flex flex-column flex-md-row justify-content-between align-items-center shadow-sm">
+                    <div class="text-center text-md-start mb-3 mb-md-0">
+                        <h6 class="fw-bold mb-1">Explore official UN SDG data</h6>
+                        <p class="text-muted small mb-0">Learn more about the global Sustainable Development Goals initiative.</p>
+                    </div>
+                    <a href="https://sdgs.un.org/goals" target="_blank" class="btn btn-un">
+                        Visit UN SDGs <i class="bi bi-box-arrow-up-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<footer>
+        <div class="footer-top">
+            <div class="footer-grid">
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                        <div class="footer-section brand-info">
+                            <img src="https://asoiu.edu.az/public/user/assets/img/adnsu_n_a_1.png" alt="ASOIU Logo"
+                                class="footer-logo">
+                            <p>Shaping industry leaders through engineering excellence</p>
+                            <div class="social-icons">
+                                <a href="https://www.facebook.com/Azii1920.ADNSU/?locale=ru_RU"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a
+                                    href="https://www.linkedin.com/school/azerbaijan-state-university-of-oil-and-industry/posts/?feedView=all"><i
+                                        class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.instagram.com/asoiu_officialpage/"><i
+                                        class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+
+                        <div class="footer-section marg">
+                            <h4>Quick links</h4>
+                            <ul>
+                                <li><a href="#">News</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                        <div class="footer-section contact-info">
+                            <h4>Contact</h4>
+                            <ul>
+                                <li><i class="fas fa-map-marker-alt"></i> Baku, Azadliq Avenue, 20</li>
+                                <li><i class="fas fa-envelope"></i> sustainability@asoiu.edu.az</li>
+                                <li><i class="fas fa-phone"></i> +994 12 493 45 57</li>
+                                <li><i class="fas fa-fax"></i> +994 12 598 29 41</li>
+                                <li><i class="fas fa-mail-bulk"></i> Post code: AZ1010</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+
+    </footer>
+    <script>
+        const sdgData = [
+            { id: 1, title: "No Poverty", color: "#e5243b", link: '/sdgs/sdg1.html' },
+            { id: 2, title: "Zero Hunger", color: "#dda63a", link: '/sdgs/sdg2.html' },
+            { id: 3, title: "Good Health and Well-Being", color: "#4c9f38", link: '/sdgs/sdg3.html' },
+            { id: 4, title: "Quality Education", color: "#c5192d", link: '/sdgs/sdg4.html' },
+            { id: 5, title: "Gender Equality", color: "#ff3a21", link: '/sdgs/sdg5.html' },
+            { id: 6, title: "Clean Water and Sanitation", color: "#26bde2", link: '/sdgs/sdg6.html' },
+            { id: 7, title: "Affordable and Clean Energy", color: "#fcc30b", link: '/sdgs/sdg7.html' },
+            { id: 8, title: "Decent Work and Economic Growth", color: "#a21942", link: '/sdgs/sdg8.html' },
+            { id: 9, title: "Industry, Innovation and Infrastructure", color: "#fd6925", link: '/sdgs/sdg9.html' },
+            { id: 10, title: "Reduced Inequalities", color: "#dd1367", link: '/sdgs/sdg10.html' },
+            { id: 11, title: "Sustainable Cities and Communities", color: "#fd9d24", link: '/sdgs/sdg11.html' },
+            { id: 12, title: "Responsible Consumption and Production", color: "#bf8b2e", link: '/sdgs/sdg12.html' },
+            { id: 13, title: "Climate Action", color: "#3f7e44", link: '/sdgs/sdg13.html' },
+            { id: 14, title: "Life Below Water", color: "#0a97d9", link: '/sdgs/sdg14.html' },
+            { id: 15, title: "Life on Land", color: "#56c02b", link: '/sdgs/sdg15.html' },
+            { id: 16, title: "Peace, Justice and Strong Institutions", color: "#00689d", link: '/sdgs/sdg16.html' },
+            { id: 17, title: "Partnerships for the Goals", color: "#19486a", link: '/sdgs/sdg17.html' }
+        ];
+
+        const container = document.getElementById('sdg-container');
+
+        sdgData.forEach(goal => {
+            const cardMarkup = `
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card sdg-card shadow-sm" style="border-left-color: ${goal.color}">
+                        <div class="card-body p-4">
+                            <div class="sdg-number" style="background-color: ${goal.color}">
+                                ${goal.id}
+                            </div>
+                            <h5 class="card-title fw-bold mb-4">${goal.title}</h5>
+                            <a href=${goal.link} class="learn-more">
+                                Learn more <i class="bi bi-chevron-right ms-1" style="font-size: 0.8rem;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            container.innerHTML += cardMarkup;
+        });
+    </script>
+
+ 
+</body>
+</html>

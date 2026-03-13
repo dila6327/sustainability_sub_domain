@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASOIU - Sustainability</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="activities.css">
+     <script src="script.js" defer></script>
+  
+</head>
+
+<body>
+  <header>
+
+<a href="https://asoiu.edu.az/" class="logo-section">
+
+<div class="logo-img">
+<img src="https://asoiu.edu.az/public/user/assets/img/nav_Logo_b.png" alt="ASOIU Logo">
+</div>
+
+<div class="logo-text">
+<h1>ASOIU</h1>
+<p>Sustainability</p>
+</div>
+
+</a>
+
+<div class="header-actions">
+
+
+<a href="https://asoiu.edu.az/upload/sustainability/sdg/ASOIU%20SDG%20REPORT%20ON%20SUSTAINABILITY.pdf" class="report-btn">Sustainability Report</a>
+
+<button class="menu-toggle" id="menuToggle">
+<i class="fas fa-bars"></i>
+</button>
+
+</div>
+
+</header>
+
+    <nav class="navbar-main">
+        <div class="navbar-rows">
+            <div class="navbar-row top">
+                <a href="Plan.html" class="nav-link">Plan</a>
+                <a href="strategy.html" class="nav-link">Strategy</a>
+                <a href="education.html" class="nav-link">Education</a>
+                <a href="research.html" class="nav-link">Research</a>
+                <a href="comitee.html" class="nav-link">Committee</a>
+                <a href="activities.html" class="nav-link">Activities</a>
+                <a href="/Pilicies/policies.html" class="nav-link">Policies</a>
+            </div>
+
+            <div class="navbar-row">
+                <a href="trainings.html" class="nav-link">Trainings</a>
+                <a href="alumni.html" class="nav-link">Alumni</a>
+                <a href="assesment.html" class="nav-link">Assessment</a>
+
+                <div class="dropdown">
+                    <button class="nav-link dropdown-trigger" id="sdgBtn">SDG's at ASOIU</button>
+                    <div class="dropdown-menu sdg-menu" id="sdgMenu">
+                        <div class="sdg-grid" id="sdgGrid"></div>
+                        <div class="sdg-footer">
+                            <a href="all_sdgs.html">View All SDGs</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="nav-link dropdown-trigger" id="rankingsBtn">Rankings</button>
+                    <div class="dropdown-menu rankings-menu" id="rankingsMenu">
+                        <a href="#" class="rankings-item">UI GreenMetric</a>
+                        <a href="/QS_Sustainability/qs_sustainability.html" class="rankings-item">QS Sustainability</a>
+                        <a href="#" class="rankings-item">THE Impact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+       <main class="main-content">
+        <h2 class="page-title">ASOIU Sustainability Activities</h2>
+
+        <!-- SDG Filter Buttons -->
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="1">SDG 1</button>
+            <button class="filter-btn" data-filter="3">SDG 3</button>
+            <button class="filter-btn" data-filter="4">SDG 4</button>
+            <button class="filter-btn" data-filter="5">SDG 5</button>
+            <button class="filter-btn" data-filter="6">SDG 6</button>
+            <button class="filter-btn" data-filter="7">SDG 7</button>
+            <button class="filter-btn" data-filter="8">SDG 8</button>
+            <button class="filter-btn" data-filter="10">SDG 10</button>
+            <button class="filter-btn" data-filter="11">SDG 11</button>
+            <button class="filter-btn" data-filter="12">SDG 12</button>
+            <button class="filter-btn" data-filter="13">SDG 13</button>
+            <button class="filter-btn" data-filter="14">SDG 14</button>
+            <button class="filter-btn" data-filter="15">SDG 15</button>
+            
+        </div>
+
+        <!-- News Grid -->
+        <div class="news-grid" id="newsGrid">
+            <!-- News will be populated by JavaScript -->
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal" id="activityModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="modalDescription"></p>
+                <a id="modalLink" href="#" target="_blank" class="modal-link">View Full Article →</a>
+            </div>
+        </div>
+    </div>
+<footer>
+        <div class="footer-top">
+            <div class="footer-grid">
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                        <div class="footer-section brand-info">
+                            <img src="https://asoiu.edu.az/public/user/assets/img/adnsu_n_a_1.png" alt="ASOIU Logo"
+                                class="footer-logo">
+                            <p>Shaping industry leaders through engineering excellence</p>
+                            <div class="social-icons">
+                                <a href="https://www.facebook.com/Azii1920.ADNSU/?locale=ru_RU"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a
+                                    href="https://www.linkedin.com/school/azerbaijan-state-university-of-oil-and-industry/posts/?feedView=all"><i
+                                        class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.instagram.com/asoiu_officialpage/"><i
+                                        class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+
+                        <div class="footer-section marg">
+                            <h4>Quick links</h4>
+                            <ul>
+                                <li><a href="#">News</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                        <div class="footer-section contact-info">
+                            <h4>Contact</h4>
+                            <ul>
+                                <li><i class="fas fa-map-marker-alt"></i> Baku, Azadliq Avenue, 20</li>
+                                <li><i class="fas fa-envelope"></i> sustainability@asoiu.edu.az</li>
+                                <li><i class="fas fa-phone"></i> +994 12 493 45 57</li>
+                                <li><i class="fas fa-fax"></i> +994 12 598 29 41</li>
+                                <li><i class="fas fa-mail-bulk"></i> Post code: AZ1010</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+
+    </footer>
+   
+</body>
+</html>

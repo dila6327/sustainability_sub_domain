@@ -1,0 +1,34 @@
+.hero {
+            background-color: var(--primary-light);
+            color: var(--primary-foreground);
+            padding: 56px 0 80px;
+            margin-bottom: 40px;
+              
+        }
+
+        .hero-content {
+            max-width: 840px;
+        }
+
+        .hero-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            opacity: 0.8;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }

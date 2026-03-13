@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASOIU - Sustainability Strategy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hero.css">
+
+    <style>
+       
+.hero{
+            margin-top: 0px;
+         }   
+        
+        main {
+            background: var(--background);
+        }
+
+       
+
+        .main-layout {
+            display: flex;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        .sidebar {
+            width: 240px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+        }
+
+        .sidebar p {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .toc-list {
+            list-style: none;
+            border-left: 1px solid var(--border);
+            padding: 0;
+        }
+
+        .toc-item {
+            margin: 0;
+        }
+
+        .toc-link {
+            display: block;
+            padding: 6px 0 6px 12px;
+            font-size: 12px;
+            color: var(--text-muted);
+            text-decoration: none;
+            border-left: 2px solid transparent;
+            margin-left: -1px;
+            transition: all 0.2s ease;
+        }
+
+        .toc-link:hover {
+            color: var(--foreground);
+            border-left-color: var(--border);
+        }
+
+        .toc-link.active {
+            color: var(--primary);
+            border-left-color: var(--primary);
+            font-weight: 600;
+        }
+
+        .article {
+            flex: 1;
+            max-width: 800px;
+            min-width: 0;
+        }
+
+        section {
+            margin-bottom: 40px;
+            scroll-margin-top: 120px;
+        }
+
+        section h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-heading-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+            background: rgba(30, 139, 159, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        section p {
+            font-size: 14px;
+            color: var(--foreground);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        section p:last-child {
+            margin-bottom: 0;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 40px 0;
+        }
+
+        .info-box {
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            background: var(--muted);
+            padding: 24px;
+            margin-top: 16px;
+        }
+
+        .vision-box {
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            background: var(--muted);
+            padding: 24px;
+            margin-top: 16px;
+        }
+
+        .vision-box p {
+            font-style: italic;
+            margin: 0;
+        }
+
+        .policies-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .policy-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .policy-item:hover {
+            background: var(--muted);
+            border-color: var(--primary);
+        }
+
+        .policy-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            background: rgba(30, 139, 159, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .policy-number {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-right: 4px;
+        }
+
+        .strategies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .strategy-card {
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .strategy-card:hover {
+            border-color: var(--primary);
+            background: var(--muted);
+        }
+
+        .strategy-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            background: rgba(30, 139, 159, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            color: var(--primary);
+            font-size: 18px;
+        }
+
+        .strategy-card h4 {
+            font-weight: 600;
+            color: var(--foreground);
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .strategy-card p {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .challenges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .challenge-card {
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 20px;
+            transition: all 0.2s ease;
+        }
+
+        .challenge-card:hover {
+            border-color: var(--primary);
+            background: var(--muted);
+        }
+
+        .challenge-card h4 {
+            font-weight: 600;
+            color: var(--foreground);
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .challenge-card p {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .action-card {
+            display: flex;
+            gap: 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .action-card:hover {
+            border-color: var(--primary);
+            background: var(--muted);
+        }
+
+        .action-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            background: rgba(30, 139, 159, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .action-card h4 {
+            font-weight: 600;
+            color: var(--foreground);
+            font-size: 12px;
+            margin: 0 0 4px 0;
+        }
+
+        .action-card p {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            transition: all 0.2s ease;
+        }
+
+        #scrollTopBtn.visible {
+            display: flex;
+        }
+
+        #scrollTopBtn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 1024px) {
+            .main-layout {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .sidebar {
+                width: 100%;
+                position: static;
+                display: none;
+            }
+
+            section h2 {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+          
+
+            .navbar-rows {
+                padding: 16px;
+                display: none;
+                transition: display 0.3s ease;
+                visibility: visible;
+                opacity: 1;
+                z-index: 1000;
+            }
+
+            .navbar-rows.mobile-hidden {
+                display: none !important;
+                visibility: hidden;
+                opacity: 0;
+            }
+
+            .navbar-row {
+                gap: 0;
+                padding: 0;
+                justify-content: flex-start;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                overflow-x: visible;
+                overflow-y: visible;
+                font-size: 13px;
+            }
+
+            .navbar-row.top {
+                border-bottom: 1px solid rgba(255,255,255,0.2);
+                padding-bottom: 0;
+                margin-bottom: 12px;
+            }
+
+            .nav-link {
+                font-size: 13px;
+                font-weight: 500;
+                padding: 12px 0;
+                color: white;
+                transition: all 0.2s ease;
+                white-space: nowrap;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                width: 100%;
+            }
+
+            .nav-link:hover {
+                opacity: 0.8;
+                background: rgba(255,255,255,0.05);
+            }
+
+            .dropdown {
+                position: relative;
+                flex-shrink: 0;
+                width: 100%;
+            }
+
+            .dropdown-trigger {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                white-space: nowrap;
+                padding: 12px 0;
+                width: 100%;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .dropdown-trigger::after {
+                content: '';
+                width: 0;
+                height: 0;
+                border-left: 3px solid transparent;
+                border-right: 3px solid transparent;
+                border-top: 5px solid currentColor;
+                transition: transform 0.2s ease;
+                margin-left: auto;
+            }
+
+            .dropdown-trigger.show::after {
+                transform: rotate(180deg);
+            }
+
+            .dropdown-menu {
+                width: 100%;
+                max-width: 100%;
+                left: 0;
+                right: 0;
+                transform: none;
+                position: static;
+                top: auto;
+                max-height: auto;
+                overflow-x: visible;
+                overflow-y: visible;
+                z-index: 1002;
+                padding: 0 !important;
+                box-shadow: none;
+                background: rgba(0,0,0,0.1);
+                margin-top: 0;
+            }
+
+            .sdg-menu {
+                width: 100%;
+                padding: 12px 0;
+                background: white;
+                max-height: 70vh;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .sdg-menu::-webkit-scrollbar {
+                width: 8px;
+            }
+
+            .sdg-menu::-webkit-scrollbar-track {
+                background: #f1f1f1;
+            }
+
+            .sdg-menu::-webkit-scrollbar-thumb {
+                background: #888;
+                border-radius: 4px;
+            }
+
+            .sdg-menu::-webkit-scrollbar-thumb:hover {
+                background: #555;
+            }
+
+            .sdg-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                overflow-x: visible;
+                overflow-y: visible;
+                padding: 0;
+                margin: 0;
+            }
+
+            .sdg-item {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 12px;
+                padding: 12px 16px;
+                border-radius: 0;
+                text-decoration: none;
+                color: var(--foreground);
+                font-size: 13px;
+                font-weight: 500;
+                transition: background 0.2s ease;
+                text-align: left;
+                white-space: normal;
+                flex-shrink: 0;
+                width: 100%;
+                border-bottom: 1px solid #f0f0f0;
+                min-height: 56px;
+            }
+
+            .sdg-item:hover {
+                background: #f5f5f5;
+            }
+
+            .sdg-item:last-child {
+                border-bottom: none;
+            }
+
+            .sdg-badge {
+                width: 40px;
+                height: 40px;
+                border-radius: 6px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: bold;
+                font-size: 12px;
+                flex-shrink: 0;
+            }
+
+            .sdg-title {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .sdg-number {
+                font-size: 11px;
+                opacity: 0.7;
+            }
+
+            .rankings-menu {
+                width: 100%;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                overflow-x: visible;
+                background: rgba(0,0,0,0.1);
+            }
+
+            .rankings-item {
+                display: flex;
+                align-items: center;
+                padding: 12px;
+                text-decoration: none;
+                color: var(--foreground);
+                font-size: 13px;
+                font-weight: 500;
+                transition: all 0.2s ease;
+                border-radius: 0;
+                white-space: nowrap;
+                flex-shrink: 0;
+                width: 100%;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+            }
+
+            .rankings-item:hover {
+                background: rgba(0,0,0,0.15);
+            }
+
+            .rankings-item:last-child {
+                border-bottom: none;
+            }
+
+            .sdg-footer {
+                display: none;
+            }
+
+            .mission-section,
+            .news-section,
+            .faq-section {
+                padding: 40px 16px;
+            }
+
+            .mission-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .news-cards {
+                gap: 12px;
+            }
+
+            .news-card {
+                min-width: calc(100% - 0px);
+            }
+
+            .news-nav-buttons {
+                justify-content: center;
+            }
+
+            .btn-all-news {
+                margin-top: 32px;
+                padding: 10px 24px;
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 640px) {
+
+            .sdg-grid, .rankings-menu {
+                grid-template-columns: 1fr;
+                gap: 0;
+                padding: 0;
+            }
+
+            .sdg-item, .rankings-item {
+                width: 100%;
+                border-radius: 0;
+                padding: 12px;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero {
+                padding: 40px 16px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .main-layout {
+                padding: 20px 16px;
+            }
+
+            section h2 {
+                font-size: 18px;
+            }
+
+            section p {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            .logo-text h1 {
+                display: none;
+            }
+
+            section h2 {
+                font-size: 16px;
+            }
+
+            .strategies-grid, .challenges-grid, .action-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .main-layout {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+ <header>
+
+<a href="https://asoiu.edu.az/" class="logo-section">
+
+<div class="logo-img">
+<img src="https://asoiu.edu.az/public/user/assets/img/nav_Logo_b.png" alt="ASOIU Logo">
+</div>
+
+<div class="logo-text">
+<h1>ASOIU</h1>
+<p>Sustainability</p>
+</div>
+
+</a>
+
+<div class="header-actions">
+
+
+<a href="https://asoiu.edu.az/upload/sustainability/sdg/ASOIU%20SDG%20REPORT%20ON%20SUSTAINABILITY.pdf" class="report-btn">Sustainability Report</a>
+
+<button class="menu-toggle" id="menuToggle">
+<i class="fas fa-bars"></i>
+</button>
+
+</div>
+
+</header>
+
+    <nav class="navbar-main">
+        <div class="navbar-rows">
+            <div class="navbar-row top">
+                <a href="Plan.html" class="nav-link">Plan</a>
+                <a href="strategy.html" class="nav-link">Strategy</a>
+                <a href="education.html" class="nav-link">Education</a>
+                <a href="research.html" class="nav-link">Research</a>
+                <a href="comitee.html" class="nav-link">Committee</a>
+                <a href="activities.html" class="nav-link">Activities</a>
+                <a href="/Pilicies/policies.html" class="nav-link">Policies</a>
+            </div>
+
+            <div class="navbar-row">
+                <a href="trainings.html" class="nav-link">Trainings</a>
+                <a href="alumni.html" class="nav-link">Alumni</a>
+                <a href="assesment.html" class="nav-link">Assessment</a>
+
+                <div class="dropdown">
+                    <button class="nav-link dropdown-trigger" id="sdgBtn">SDG's at ASOIU</button>
+                    <div class="dropdown-menu sdg-menu" id="sdgMenu">
+                        <div class="sdg-grid" id="sdgGrid"></div>
+                        <div class="sdg-footer">
+                            <a href="all_sdgs.html">View All SDGs</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="nav-link dropdown-trigger" id="rankingsBtn">Rankings</button>
+                    <div class="dropdown-menu rankings-menu" id="rankingsMenu">
+                        <a href="#" class="rankings-item">UI GreenMetric</a>
+                        <a href="/QS_Sustainability/qs_sustainability.html" class="rankings-item">QS Sustainability</a>
+                        <a href="#" class="rankings-item">THE Impact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <p class="hero-label">Environmental Commitment</p>
+                <h1>Sustainability Strategy</h1>
+                <p>ASOIU's comprehensive strategy towards becoming carbon neutral by 2040, integrating environmental management, public engagement, and sustainable education.</p>
+            </div>
+        </section>
+
+        <div class="main-layout">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar">
+                <p>On this page</p>
+                <ul class="toc-list" id="tocList"></ul>
+            </div>
+
+            <!-- Article -->
+            <article class="article">
+                <!-- Environmental Sustainability -->
+                <section id="environmental">
+                    <h2>
+                        <span class="section-heading-icon"><i class="fas fa-leaf"></i></span>
+                        Environmental Sustainability
+                    </h2>
+                    <p>We are committed to raising awareness among staff, students, and the general public about a variety of environmental issues and wicked problems, including energy conservation and renewable energy, water scarcity and management, resource depletion, food waste, sustainable cities and infrastructure, pollution, and climate change.</p>
+                    <p>We created the sustainable development unit (the green transformation unit – the sustainability support unit) in ASOIU to serve as the focal point for the university's involvement in and response to environmental challenges. This unit has several sub-committees made up of specialized academics and research staff, as well as consultants from NGOs and the industry sector, who engage in a variety of environmental activities both on and off campus to find long-term solutions to Azerbaijan's societal problems.</p>
+                </section>
+
+                <hr>
+
+                <!-- Strategy Overview -->
+                <section id="strategy-overview">
+                    <h2>
+                        <span class="section-heading-icon"><i class="fas fa-shield-check"></i></span>
+                        Strategy Overview
+                    </h2>
+                    <div class="info-box">
+                        <p>As a part of Azerbaijan State Oil and Industry University's 2026 strategy, the university aims to <strong>reduce its carbon footprint</strong> with the goal of becoming <strong>carbon neutral by 2040</strong>. In line with this goal, the university invests its portfolios in accordance with the highest standards.</p>
+                    </div>
+                </section>
+
+                <hr>
+
+                <!-- Sustainable Campus -->
+                <section id="campus">
+                    <h2>
+                        <span class="section-heading-icon"><i class="fas fa-building"></i></span>
+                        Towards a Sustainable University Campus
+                    </h2>
+                    <p>Azerbaijan State Oil and Industry University is becoming increasingly interested in lowering the environmental effect of its campus as a means of actively addressing the concerns of climate change.</p>
+                    <p>Every product and service has an influence on the environment. Such effects can occur at any point of the product or service life cycle, from inputs to processing to ultimate outputs. Universities are systems that engage in a wide range of complicated scientific activities (lab experiments, agricultural operations, workshops), as well as social and educational activities (teaching, learning, and research), energy supply and consumption, transportation and interaction, and sports and entertainment.</p>
+                    <p>The university's physical activities and buildings can have a considerable environmental impact, thus it is critical to establish methods for organizing activities, identifying and reducing their negative environmental effects. Over the last decade, several institutions have adopted a more responsible approach to maintaining and improving their environmental performance.</p>
+                    <p>Current sustainable research trends on campus must be identified, and essential metrics and activities must be defined based on energy, buildings, water, waste, transportation, land, air, climate, and food. According to findings, increasing energy generation on campus and lowering energy usage in buildings are by far the most often implemented initiatives.</p>
+                </section>
+
+                <hr>
+
+                <!-- Vision -->
+                <section id="vision">
+                    <h2>
+                        <span class="section-heading-icon"><i class="fas fa-eye"></i></span>
+                        Our Vision
+                    </h2>
+                    <div class="vision-box">
+                        <p>Our vision is to be an educational institution that addresses, collaborates, and promotes, on a regional or global scale, reducing the negative environmental, economic, social, and health impacts of its resource use to perform its teaching, research, awareness, partnership, and supervision functions in ways that assist the community in transitioning to sustainable lifestyles.</p>
+                    </div>
+                </section>
+
+                <hr>
+
+                <!-- Reduction Policy -->
+                <section id="reduction-policy">
+                    <h2>Campus Sustainability &amp; Reduction Policy</h2>
+                    <p>ASOIU recognizes the significance of decreasing its activities' impact on the climate and the environment, and has taken several proactive initiatives to address this issue. The institution has created policies and initiatives including a variety of measures targeted at lowering greenhouse gas emissions, saving energy and water, decreasing waste, and encouraging sustainable habits.</p>
+                    <div class="policies-list" id="policiesList"></div>
+                </section>
+
+                <hr>
+
+                <!-- Integrated Approach -->
+                <section id="integrated-approach">
+                    <h2>Integrated Approach to Campus Sustainability</h2>
+                    <p>Suitable environmental and sustainability concerns should be integrated into physical and academic planning processes on campus. When formulating university policies, visions, and objectives, ASOIU has developed a more suitable integrated approach to achieving campus sustainability through the integration of three strategies:</p>
+                    <div class="strategies-grid" id="strategiesGrid"></div>
+                </section>
+
+                <hr>
+
+                <!-- Challenges -->
+                <section id="challenges">
+                    <h2>Challenges in Achieving Sustainability Goals</h2>
+                    <p>While ASOIU is devoted to sustainability, it confronts various hurdles in meeting its objectives. Despite these problems, ASOIU has chosen a proactive approach and is trying to solve them in order to reach its goals.</p>
+                    <div class="challenges-grid" id="challengesGrid"></div>
+                </section>
+
+                <hr>
+
+                <!-- Action Plan -->
+                <section id="action-plan">
+                    <h2>Action Plan to Reduce Carbon Footprint</h2>
+                    <p>ASOIU's comprehensive action plan outlines key initiatives to reduce its carbon footprint and promote sustainability across campus, demonstrating its commitment to environmental responsibility and contributing to global efforts to combat climate change.</p>
+                    <div class="action-grid" id="actionGrid"></div>
+                    <div class="info-box">
+                        <p>Overall, these measures assist ASOIU minimize its carbon footprint and promote sustainability around campus. By adopting a thorough sustainability strategy, the university can demonstrate its commitment to environmental responsibility while also contributing to global efforts to combat climate change.</p>
+                    </div>
+                </section>
+
+  <div class="container my-4">
+  <div class="bg-light rounded-4 p-4 d-flex flex-column flex-md-row align-items-center justify-content-between">
+    
+    <!-- Left Text -->
+    <div class="mb-3 mb-md-0">
+      <h5 class="fw-semibold mb-1">Look through the complete strategy</h5>
+    </div>
+
+    <!-- Right Button -->
+    <a href="https://asoiu.edu.az/sustainability_strategy" class="btn btn-warning px-4 py-2 rounded-3 fw-medium">
+      <i class="bi bi-download me-2"></i>
+      View full strategy
+    </a>
+
+  </div>
+</div>
+
+                   
+                </div>
+               
+
+            </article>
+        </div>
+    </main>
+
+  <footer>
+        <div class="footer-top">
+            <div class="footer-grid">
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                        <div class="footer-section brand-info">
+                            <img src="https://asoiu.edu.az/public/user/assets/img/adnsu_n_a_1.png" alt="ASOIU Logo"
+                                class="footer-logo">
+                            <p>Shaping industry leaders through engineering excellence</p>
+                            <div class="social-icons">
+                                <a href="https://www.facebook.com/Azii1920.ADNSU/?locale=ru_RU"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a
+                                    href="https://www.linkedin.com/school/azerbaijan-state-university-of-oil-and-industry/posts/?feedView=all"><i
+                                        class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.instagram.com/asoiu_officialpage/"><i
+                                        class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+
+                        <div class="footer-section marg">
+                            <h4>Quick links</h4>
+                            <ul>
+                                <li><a href="#">News</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                        <div class="footer-section contact-info">
+                            <h4>Contact</h4>
+                            <ul>
+                                <li><i class="fas fa-map-marker-alt"></i> Baku, Azadliq Avenue, 20</li>
+                                <li><i class="fas fa-envelope"></i> sustainability@asoiu.edu.az</li>
+                                <li><i class="fas fa-phone"></i> +994 12 493 45 57</li>
+                                <li><i class="fas fa-fax"></i> +994 12 598 29 41</li>
+                                <li><i class="fas fa-mail-bulk"></i> Post code: AZ1010</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+    <button id="scrollTopBtn" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    </footer>
+    <script>
+        // MOBILE MENU TOGGLE
+        const menuToggle = document.getElementById('menuToggle');
+        const navbarRows = document.querySelector('.navbar-rows');
+
+        if (menuToggle && navbarRows) {
+            menuToggle.addEventListener('click', () => {
+                const isHidden = navbarRows.classList.contains('mobile-hidden');
+                navbarRows.classList.toggle('mobile-hidden');
+                const icon = menuToggle.querySelector('i');
+                if (isHidden) {
+                    icon.className = 'fas fa-times';
+                    navbarRows.style.display = 'block';
+                } else {
+                    icon.className = 'fas fa-bars';
+                    navbarRows.style.display = 'none';
+                }
+            });
+
+            // Close menu when a nav-link (not dropdown trigger) is clicked
+            const navLinks = document.querySelectorAll('a.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 768) {
+                        navbarRows.classList.add('mobile-hidden');
+                        navbarRows.style.display = 'none';
+                        menuToggle.querySelector('i').className = 'fas fa-bars';
+                    }
+                });
+            });
+
+            // Close menu on window resize if opened
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    navbarRows.classList.remove('mobile-hidden');
+                    navbarRows.style.display = 'block';
+                    menuToggle.querySelector('i').className = 'fas fa-bars';
+                }
+            });
+        }
+
+        const sdgColors = {
+            1: '#E5243B', 2: '#DDA63A', 3: '#4C9F38', 4: '#C5192D', 5: '#FF3A21',
+            6: '#26BDE2', 7: '#FCC30B', 8: '#A21942', 9: '#FD6925', 10: '#DD1367',
+            11: '#FD9D24', 12: '#BF8B2E', 13: '#3F7E44', 14: '#0A97D9', 15: '#56C02B',
+            16: '#00689D', 17: '#19486A'
+        };
+
+        const sdgTitles = {
+            1: 'No Poverty', 2: 'Zero Hunger', 3: 'Good Health and Well-Being', 4: 'Quality Education',
+            5: 'Gender Equality', 6: 'Clean Water and Sanitation', 7: 'Affordable and Clean Energy',
+            8: 'Decent Work and Economic Growth', 9: 'Industry, Innovation and Infrastructure',
+            10: 'Reduced Inequalities', 11: 'Sustainable Cities and Communities',
+            12: 'Responsible Consumption and Production', 13: 'Climate Action', 14: 'Life Below Water',
+            15: 'Life on Land', 16: 'Peace, Justice and Strong Institutions', 17: 'Partnerships for the Goals'
+        };
+
+        function initSDGGrid() {
+            const sdgGrid = document.getElementById('sdgGrid');
+            if (sdgGrid) {
+                for (let i = 1; i <= 17; i++) {
+                    const sdgItem = document.createElement('a');
+                    sdgItem.href = '#';
+                    sdgItem.className = 'sdg-item';
+                    sdgItem.innerHTML = `
+                        <div class="sdg-badge" style="background: ${sdgColors[i]}">
+                            ${i}
+                        </div>
+                        <div class="sdg-title">${sdgTitles[i]}</div>
+                    `;
+                    sdgGrid.appendChild(sdgItem);
+                }
+            }
+        }
+
+        function setupDropdowns() {
+            const dropdowns = document.querySelectorAll('.dropdown');
+
+            dropdowns.forEach(dropdown => {
+                const btn = dropdown.querySelector('.dropdown-trigger');
+                const menu = dropdown.querySelector('.dropdown-menu');
+
+                if (btn && menu) {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const isShow = menu.classList.contains('show');
+                        document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('show'));
+                        if (!isShow) {
+                            menu.classList.add('show');
+                        }
+                    });
+
+                    // Prevent dropdown menu from closing when clicking inside it
+                    menu.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                    });
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.dropdown')) {
+                    document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('show'));
+                }
+            });
+        }
+
+        // Table of Contents
+        const tocItems = [
+            { id: 'environmental', label: 'Environmental Sustainability' },
+            { id: 'strategy-overview', label: 'Strategy Overview' },
+            { id: 'campus', label: 'Sustainable Campus' },
+            { id: 'vision', label: 'Our Vision' },
+            { id: 'reduction-policy', label: 'Reduction Policy' },
+            { id: 'integrated-approach', label: 'Integrated Approach' },
+            { id: 'challenges', label: 'Challenges' },
+            { id: 'action-plan', label: 'Action Plan' },
+        ];
+
+        // Populate TOC
+        const tocList = document.getElementById('tocList');
+        if (tocList) {
+            tocItems.forEach(item => {
+                const li = document.createElement('li');
+                li.className = 'toc-item';
+                const a = document.createElement('a');
+                a.href = `#${item.id}`;
+                a.className = 'toc-link';
+                a.textContent = item.label;
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+        }
+
+        // Active section tracking
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Remove active class from all links
+                    document.querySelectorAll('.toc-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    
+                    // Add active class to current section's link
+                    const link = document.querySelector(`a[href="#${entry.target.id}"]`);
+                    if (link) {
+                        link.classList.add('active');
+                    }
+                }
+            });
+        }, { rootMargin: '-20% 0px -60% 0px' });
+
+        // Observe all sections
+        document.querySelectorAll('section[id]').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Scroll to top functionality
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('scrollTopBtn');
+            if (btn) {
+                if (window.scrollY > 600) {
+                    btn.classList.add('visible');
+                } else {
+                    btn.classList.remove('visible');
+                }
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function downloadPDF() {
+            window.location.href = 'https://asoiu.edu.az/sustainability_strategy';
+        }
+
+        // Initialize everything on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            initSDGGrid();
+            setupDropdowns();
+        });
+         document.getElementById("downloadBtn").addEventListener("click", function() {
+    
+       window.location.href = "https://asoiu.edu.az/sustainability_strategy";
+    });
+    </script>
+    </script>
+
+</body>
+</html>

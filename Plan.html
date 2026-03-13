@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainability Plan 2023–2030 - ASOIU</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="hero.css">
+    <style>
+
+       .hero{
+            margin-top: 0px;
+         }   
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--primary);
+        }
+
+      
+   
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        /* Hero Section */
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 32px;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        /* Main Content Layout */
+        .main-layout {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .sidebar {
+            width: 208px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 96px;
+            align-self: flex-start;
+        }
+
+        .sidebar-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .toc-list {
+            list-style: none;
+            border-left: 1px solid var(--border);
+            padding: 0;
+        }
+
+        .toc-item {
+            list-style: none;
+        }
+
+        .toc-link {
+            display: block;
+            padding: 4px 12px;
+            padding-left: 12px;
+            font-size: 12px;
+            color: var(--muted-foreground);
+            text-decoration: none;
+            border-left: 2px solid transparent;
+            margin-left: -1px;
+            transition: all 0.2s ease;
+            line-height: 1.4;
+        }
+
+        .toc-link:hover {
+            color: var(--foreground);
+            border-left-color: var(--border);
+        }
+
+        .toc-link.active {
+            color: var(--primary);
+            border-left-color: var(--primary);
+            font-weight: 600;
+        }
+
+        .article {
+            flex: 1;
+            min-width: 0;
+            max-width: 1000px;
+        }
+
+        /* Section Heading */
+        .section-heading {
+            scroll-margin-top: 112px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            margin-top: 0;
+            padding-top: 32px;
+        }
+
+        .section-heading:first-child {
+            padding-top: 0;
+        }
+
+        .section-heading-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background-color: rgba(30, 139, 159, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--primary);
+            font-size: 20px;
+        }
+
+        section {
+            scroll-margin-top: 112px;
+            margin-bottom: 0;
+        }
+
+        hr {
+            margin: 40px 0;
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+
+        p {
+            margin-bottom: 16px;
+            line-height: 1.7;
+            color: var(--foreground);
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--foreground);
+            margin: 32px 0 12px 0;
+            line-height: 1.4;
+        }
+
+        h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--foreground);
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 12px;
+            color: var(--muted-foreground);
+            font-style: italic;
+            margin-bottom: 16px;
+        }
+
+        /* Info Cards */
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .info-card {
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background-color: rgba(245, 245, 245, 0.5);
+            padding: 16px;
+        }
+
+        .info-card h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--foreground);
+            margin-bottom: 8px;
+        }
+
+        .info-card p {
+            font-size: 13px;
+            color: var(--muted-foreground);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Goals Grid */
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .goal-card {
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            padding: 20px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .goal-card:hover {
+            border-color: rgba(30, 139, 159, 0.4);
+            background-color: rgba(245, 245, 245, 0.5);
+        }
+
+        .goal-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .goal-card-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background-color: rgba(30, 139, 159, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--primary);
+            font-size: 16px;
+            transition: all 0.2s ease;
+        }
+
+        .goal-card:hover .goal-card-icon {
+            background-color: rgba(30, 139, 159, 0.15);
+        }
+
+        .goal-card h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--foreground);
+            margin: 0;
+        }
+
+        .goal-card p {
+            font-size: 13px;
+            color: var(--muted-foreground);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Lists */
+        ol, ul {
+            margin-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        /* Bullet points */
+        .bullet-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px 24px;
+            margin: 24px 0;
+            list-style: none;
+        }
+
+        .bullet-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .bullet-list li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        /* Table */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin: 24px 0;
+        }
+
+        table {
+            width: 100%;
+            font-size: 13px;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background-color: rgba(30, 139, 159, 0.05);
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            text-align: left;
+            padding: 12px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+            color: var(--foreground);
+        }
+
+        tbody tr:hover {
+            background-color: rgba(245, 245, 245, 0.5);
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Committee Members Grid */
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .member-item {
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .member-name {
+            font-weight: 600;
+            color: var(--foreground);
+        }
+
+        .member-role {
+            color: var(--muted-foreground);
+        }
+
+        /* Download CTA */
+        .download-cta {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-top: 56px;
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background-color: rgba(245, 245, 245, 0.5);
+        }
+
+        .download-cta-text h4 {
+            margin: 0;
+            color: var(--foreground);
+            font-weight: 600;
+        }
+
+        .download-cta-text p {
+            margin: 4px 0 0 0;
+            font-size: 13px;
+            color: var(--muted-foreground);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            display: none;
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            z-index: 50;
+        }
+
+        .scroll-top:hover {
+            background-color: rgba(30, 139, 159, 0.9);
+            transform: translateY(-4px);
+        }
+
+        .scroll-top.visible {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 1024px) {
+            .main-layout {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .sidebar {
+                width: 100%;
+                position: static;
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .download-cta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .section-heading {
+                font-size: 20px;
+            }
+
+            .sdg-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 12px 16px;
+                flex-wrap: nowrap;
+            }
+
+            .logo-section {
+                gap: 8px;
+                flex: 1;
+            }
+
+            .logo-circle {
+                width: 28px;
+                height: 28px;
+                font-size: 14px;
+                flex-shrink: 0;
+            }
+
+            .logo-text h1 {
+                font-size: 12px;
+            }
+
+            .logo-text p {
+                font-size: 9px;
+            }
+
+            .header-actions {
+                gap: 8px;
+            }
+
+            .menu-toggle {
+                display: block;
+                font-size: 20px;
+                padding: 4px;
+                z-index: 1001;
+            }
+
+
+            .dropdown {
+                position: relative;
+                flex-shrink: 0;
+                width: 100%;
+            }
+
+            .dropdown-trigger {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                white-space: nowrap;
+                padding: 12px 0;
+                width: 100%;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .dropdown-trigger::after {
+                content: '';
+                width: 0;
+                height: 0;
+                border-left: 3px solid transparent;
+                border-right: 3px solid transparent;
+                border-top: 5px solid currentColor;
+                transition: transform 0.2s ease;
+                margin-left: auto;
+            }
+
+            .dropdown-trigger.show::after {
+                transform: rotate(180deg);
+            }
+
+            .dropdown-menu {
+                width: 100%;
+                max-width: 100%;
+                left: 0;
+                right: 0;
+                transform: none;
+                position: static;
+                top: auto;
+                max-height: auto;
+                overflow-x: visible;
+                overflow-y: visible;
+                z-index: 1002;
+                padding: 0 !important;
+                box-shadow: none;
+                background: rgba(0,0,0,0.1);
+                margin-top: 0;
+            }
+
+            .sdg-menu {
+                width: 100%;
+                padding: 12px 0;
+                background: white;
+                max-height: 70vh;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .sdg-menu::-webkit-scrollbar {
+                width: 8px;
+            }
+
+            .sdg-menu::-webkit-scrollbar-track {
+                background: #f1f1f1;
+            }
+
+            .sdg-menu::-webkit-scrollbar-thumb {
+                background: #888;
+                border-radius: 4px;
+            }
+
+            .sdg-menu::-webkit-scrollbar-thumb:hover {
+                background: #555;
+            }
+
+            .sdg-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                overflow-x: visible;
+                overflow-y: visible;
+                padding: 0;
+                margin: 0;
+            }
+
+            .sdg-item {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 12px;
+                padding: 12px 16px;
+                border-radius: 0;
+                text-decoration: none;
+                color: var(--foreground);
+                font-size: 13px;
+                font-weight: 500;
+                transition: background 0.2s ease;
+                text-align: left;
+                white-space: normal;
+                flex-shrink: 0;
+                width: 100%;
+                border-bottom: 1px solid #f0f0f0;
+                min-height: 56px;
+            }
+
+            .sdg-item:hover {
+                background: #f5f5f5;
+            }
+
+            .sdg-item:last-child {
+                border-bottom: none;
+            }
+
+            .sdg-badge {
+                width: 40px;
+                height: 40px;
+                border-radius: 6px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: bold;
+                font-size: 12px;
+                flex-shrink: 0;
+            }
+
+            .sdg-title {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .sdg-number {
+                font-size: 11px;
+                opacity: 0.7;
+            }
+
+            .rankings-menu {
+                width: 100%;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                overflow-x: visible;
+                background: rgba(0,0,0,0.1);
+            }
+
+            .rankings-item {
+                display: flex;
+                align-items: center;
+                padding: 12px;
+                text-decoration: none;
+                color: var(--foreground);
+                font-size: 13px;
+                font-weight: 500;
+                transition: all 0.2s ease;
+                border-radius: 0;
+                white-space: nowrap;
+                flex-shrink: 0;
+                width: 100%;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+            }
+
+            .rankings-item:hover {
+                background: rgba(0,0,0,0.15);
+            }
+
+            .rankings-item:last-child {
+                border-bottom: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            header {
+                padding: 12px 16px;
+            }
+
+            .hero {
+                padding: 40px 0 50px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .info-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .goals-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .members-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading {
+                font-size: 18px;
+            }
+
+            h3 {
+                font-size: 14px;
+            }
+
+            .download-cta {
+                padding: 16px;
+            }
+
+            .sdg-menu {
+                width: 100%;
+            }
+
+            .sdg-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .rankings-menu {
+                width: 100%;
+            }
+        }
+        footer {
+    background-color: var(--primary); 
+    color: #ffffff;
+    padding: 60px 10% 30px 10%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Brand Section */
+.footer-logo {
+    width: 240px; /* Increased size to match the image */
+    height: auto;
+    display: block;
+    margin-bottom: 25px;
+    object-fit: contain;
+}
+
+    </style>
+</head>
+<body>
+<header>
+
+<a href="https://asoiu.edu.az/" class="logo-section">
+
+<div class="logo-img">
+<img src="https://asoiu.edu.az/public/user/assets/img/nav_Logo_b.png" alt="ASOIU Logo">
+</div>
+
+<div class="logo-text">
+<h1>ASOIU</h1>
+<p>Sustainability</p>
+</div>
+
+</a>
+
+<div class="header-actions">
+
+
+<a href="https://asoiu.edu.az/upload/sustainability/sdg/ASOIU%20SDG%20REPORT%20ON%20SUSTAINABILITY.pdf" class="report-btn">Sustainability Report</a>
+
+<button class="menu-toggle" id="menuToggle">
+<i class="fas fa-bars"></i>
+</button>
+
+</div>
+
+</header>
+
+    <nav class="navbar-main">
+        <div class="navbar-rows">
+            <div class="navbar-row top">
+                <a href="Plan.html" class="nav-link">Plan</a>
+                <a href="strategy.html" class="nav-link">Strategy</a>
+                <a href="education.html" class="nav-link">Education</a>
+                <a href="research.html" class="nav-link">Research</a>
+                <a href="comitee.html" class="nav-link">Committee</a>
+                <a href="activities.html" class="nav-link">Activities</a>
+                <a href="/Pilicies/policies.html" class="nav-link">Policies</a>
+            </div>
+
+            <div class="navbar-row">
+                <a href="trainings.html" class="nav-link">Trainings</a>
+                <a href="alumni.html" class="nav-link">Alumni</a>
+                <a href="assesment.html" class="nav-link">Assessment</a>
+
+                <div class="dropdown">
+                    <button class="nav-link dropdown-trigger" id="sdgBtn">SDG's at ASOIU</button>
+                    <div class="dropdown-menu sdg-menu" id="sdgMenu">
+                        <div class="sdg-grid" id="sdgGrid"></div>
+                        <div class="sdg-footer">
+                            <a href="all_sdgs.html">View All SDGs</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="nav-link dropdown-trigger" id="rankingsBtn">Rankings</button>
+                    <div class="dropdown-menu rankings-menu" id="rankingsMenu">
+                        <a href="#" class="rankings-item">UI GreenMetric</a>
+                        <a href="/QS_Sustainability/qs_sustainability.html" class="rankings-item">QS Sustainability</a>
+                        <a href="#" class="rankings-item">THE Impact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-label">Strategic Document</span>
+                <h1>Sustainability Plan 2023–2030</h1>
+                <p>A strategic framework for advancing environmental, social, and economic sustainability at Azerbaijan State Oil and Industry University.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-layout">
+            <!-- Sidebar Navigation -->
+            <nav class="sidebar">
+                <p class="sidebar-title">On this page</p>
+                <ul class="toc-list" id="tocList"></ul>
+            </nav>
+
+            <!-- Article Content -->
+            <article class="article">
+                <!-- Message from Rector -->
+                <section id="message-rector">
+                    <h2 class="section-heading">
+                        <span class="section-heading-icon"><i class="fas fa-book-open"></i></span>
+                        Message from the Rector
+                    </h2>
+                    <div style="background-color: rgba(245,245,245,0.5); border: 1px solid var(--border); border-radius: 8px; padding: 24px 32px;">
+                        <p>ASOIU's seven-year Sustainability Plan represents a strategic and collaborative framework that encompasses all dimensions of the university's structure and mission. Developed in response to the urgent global demand for sustainable development, this comprehensive initiative outlines ambitious objectives across key areas such as academic programs, scientific research, campus operations, and community outreach.</p>
+                        <p>By fostering a culture of shared responsibility and commitment, the university seeks to cultivate a generation of globally minded leaders who are equipped to address the environmental and societal challenges of the future.</p>
+                        <p>The formulation of the plan was the result of broad-based collaboration, engaging representatives from every sector of campus life. This inclusive approach ensures that sustainability is not an isolated initiative, but rather a core value embedded in the university's identity and practices.</p>
+                        <p>Our targets are intentionally ambitious—not only to raise internal standards, but also to serve as a catalyst for broader change. Through this initiative, ASOIU aims to inspire peer institutions, stakeholders, and communities to join in a collective journey toward a more resilient and sustainable world.</p>
+                        <p style="font-weight: 600; color: var(--primary); padding-top: 8px;">Assoc. Prof. Rufat Azizov, Rector</p>
+                    </div>
+                </section>
+
+                <hr>
+
+                <!-- Introduction -->
+                <section id="introduction">
+                    <h2 class="section-heading">
+                        <span class="section-heading-icon"><i class="fas fa-building"></i></span>
+                        Introduction / Background
+                    </h2>
+                    <p>ASOIU's Sustainability Plan is based on a broad block of topics built on the foundation of the university's oil & gas engineering and industrial heritage. Most importantly, this heritage has helped start and already advance sustainability initiatives many years ago at ASOIU. Our sustainability efforts have yielded local progress towards our goals as the university administration has been engaging its faculty, undergraduate and graduate candidates, and the community and solidifying ASOIU's leadership in sustainability among regional higher educational institutions.</p>
+                    <p>It has been over three years since ASOIU has been elaborating on its Sustainability Plan. As a major technological institution, ASOIU is committed to taking on a leading role in meeting environmental, social, and governance challenges. This new seven-year Sustainability Plan outlines a roadmap to achieve our vision. It establishes guiding principles, defines a broader sustainability ecosystem, and details specific goals, objectives, and tasks to drive ASOIU's much needed progress.</p>
+                </section>
+
+                <hr>
+
+                <!-- Guiding Principles -->
+                <section id="guiding-principles">
+                    <h2 class="section-heading">
+                        <span class="section-heading-icon"><i class="fas fa-bullseye"></i></span>
+                        Guiding Principles
+                    </h2>
+                    <p>At the 2005 World Summit, there was a general agreement that sustainability requires the reconciliation of environmental, social, and economic demands, also expressed as the "three pillars" of sustainability. Such a three-pillar sustainability definitely enhances the importance of Hotelling's Rule which maximizes economic rent as a function of time when non-renewable natural resources are extracted.</p>
+                    <p>Thus, ASOIU is having a serious look at sustainable development goals and has what it takes to serve all three aspects of sustainability: environmental stewardship, economic security, and social justice for all people.</p>
+                    <p>It should also be noted that these three principles work together and our community can succeed when all three of them are factored in any given purpose, be it an investment purpose, economic issue, engineering issue or political purpose.</p>
+                    <p>While such values as STEM, design thinking, sustainability, and the startup movement may appear novel to new observers, these recent initiatives are firmly rooted in ASOIU's longstanding tradition of scientific exploration, industrial innovation, and invention, a source of continual pride throughout our history.</p>
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <h4>Environmental Stewardship</h4>
+                            <p>Committed to protecting natural resources for future generations.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>Economic Security</h4>
+                            <p>Supporting sustainable economic growth that benefits the community.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>Social Justice</h4>
+                            <p>Ensuring equitable opportunities and inclusive practices for all.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <hr>
+
+                <!-- Vision -->
+                <section id="vision">
+                    <h2 class="section-heading">
+                        <span class="section-heading-icon"><i class="fas fa-lightbulb"></i></span>
+                        Vision
+                    </h2>
+                    <h3>A Global Ecosystem for Sustainable Solutions</h3>
+                    <p>ASOIU envisions a world of opportunities in sustainability culture. This culture starts from our campus and extends its roots regionally and globally through our students, faculty and alumni. Through our practice-based curriculum and unique fusion of theory and practice, we strive to be a catalyst for innovative solutions that address the triad of sustainability goals.</p>
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <h4>Research & Laboratory</h4>
+                            <p>We transform our campus into a vibrant space for experimentation and learning, fostering sustainable practices.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>Sustainability Committee</h4>
+                            <p>We empower our community to become a hub for sustainability innovation, collaborating on local challenges.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>Global Partnerships</h4>
+                            <p>We engage with partners worldwide, building a network of knowledge and action for global sustainability.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <hr>
+
+                <!-- Sustainability Process -->
+                <section id="sustainability-process">
+                    <h2 class="section-heading">
+                        <span class="section-heading-icon"><i class="fas fa-globe"></i></span>
+                        ASOIU's Sustainability Process
+                    </h2>
+                    <p>ASOIU looks its sustainability ecosystem concept as a cross-cutting function of scientific research, practical experiment, and entrepreneurial spirit that adds socio-economic value and environmental stewardship through community engagement.</p>
+                    <p>ASOIU's Sustainability Process is a comprehensive combination of academic, research, and community engagement brought to life through many functions of the university: academic departments, centers, commissions, unions, and movements.</p>
+                    <p>Moreover, ASOIU's sustainability process is driven by both, the fundamentalism of industry demand and environmentally aware consumer needs and self-starting efforts stemming from various dimensions of ASOIU.</p>
+                    <h3>Key Areas of Focus</h3>
+                    <ul class="bullet-list">
+                        <li>Academic learning, scholarship, and sustainability focused faculty</li>
+                        <li>Innovation through scientific research in sustainability</li>
+                        <li>Innovation within traditional engineering domain</li>
+                        <li>Volunteer movements and environmental awareness events</li>
+                        <li>Publication and dissemination of sustainability related work</li>
+                        <li>Campus space as a learning laboratory</li>
+                        <li>Environmental purchase plan for campus operations</li>
+                        <li>Electronic document turnover and office supplies</li>
+                        <li>Inter-disciplinary work with professional teams</li>
+                    </ul>
+                    <h3>Scientific Efforts</h3>
+                    <p>Throughout its history ASOIU has built a long history of innovation and invention within many domains of oil and gas engineering. Today ASOIU is aware of its role in environmental stewardship and is committed to advancing sustainability both locally and globally.</p>
+                    <h3>Market Demand</h3>
+                    <p>ASOIU derives market demand from industry thanks to its traditional role in research and development within the domain of engineering. ASOIU collaborates with world leading and transnational entities who bear responsibility for future environmental liability. ASOIU cooperates with leading institutions in energy and engineering from UK, France and other global regions by offering dual degree programs.</p>
+                </section>
+
+                <hr>
+
+                <!-- Result Based Holistic Approach -->
+                <section id="result-based">
+                    <h2 class="section-heading">Result Based Holistic Approach</h2>
+                    <p>ASOIU is committed to its mission and vision, long term. Our day-to-day activities are meant to achieve our vision through progress. In our view, progress opens up new opportunities for both sides of the equation: demand and supply side.</p>
+                    <p>ASOIU firmly believes in achieving its long-term success through a step-by-step process tackling our short-term challenges which add to our long-term consensus with sustainability, innovation, and invention in mind.</p>
+                    <h3>Dual Programs and Global Partnership</h3>
+                    <p>ASOIU collaborates with leading universities from UK, USA, France and other cutting-edge institutions. Examples include the Environmental and Oil and Gas engineering program with Warwick University, a long-running dual program with Georgia State University (USA), and the UFAZ program with Rennes 1 and Strasbourg universities from France.</p>
+                </section>
+
+                <hr>
+
+                <!-- The Unmet Demand -->
+                <section id="unmet-demand">
+                    <h2 class="section-heading">The Unmet Demand</h2>
+                    <p>ASOIU treats every single opportunity for a sustainable solution as a potential need waiting for its innovative team. These areas contain every aspect of physical and environmental domains including ground erosion, reservation of water resources, solid waste management, energy generation and transition, health and social solutions.</p>
+                    <p>Through collaborations with leading universities from UK, USA, France and others, ASOIU provides a combined curriculum with competencies designed to finetune cohorts to focus on sustainability, health, security, and well-being of humanity.</p>
+                    <p>We believe in our potential to contribute to some of the 17 Sustainable Development Goals (SDGs) by the United Nations until 2030.</p>
+                </section>
+
+                <hr>
+
+                <!-- Addressing Scrambles -->
+                <section id="addressing-scrambles">
+                    <h2 class="section-heading">Addressing Scrambles and Seeing Opportunities</h2>
+                    <p>ASOIU has set up a Sustainability Committee to represent the ASOIU community's sustainability voice at-large. The committee works hand-in-hand in a centralized manner with all the academic departments, centers, programs, and foreign institutions.</p>
+                    <p>The Sustainability Committee has planned to converge the High-Performance Computing Center with a new Research Center covering broader research topics from innovative-scientific issues to disability related research matters.</p>
+                </section>
+
+                <hr>
+
+                <!-- Goals and Objectives -->
+                <section id="goals-objectives">
+                    <h2 class="section-heading">
+                        <span class="section-heading-icon"><i class="fas fa-bullseye"></i></span>
+                        Goals and Objectives
+                    </h2>
+                    <p>ASOIU's sustainability-based goals extend through its regular operational routine, initiated via academic programs, research and scholarship facilities, and community engagement. Each goal is supported by objectives and sub-objectives.</p>
+                    <div class="goals-grid">
+                        <a class="goal-card" href="#goal-1">
+                            <div class="goal-card-header">
+                                <span class="goal-card-icon"><i class="fas fa-graduation-cap"></i></span>
+                                <h4>Goal 1: Teaching and Cohorts</h4>
+                            </div>
+                            <p>Cohorts learn to solve academic problems via project-based challenges in their coursework.</p>
+                        </a>
+                        <a class="goal-card" href="#goal-2">
+                            <div class="goal-card-header">
+                                <span class="goal-card-icon"><i class="fas fa-building"></i></span>
+                                <h4>Goal 2: Faculties and Laboratory</h4>
+                            </div>
+                            <p>Major leaning points for students, academic faculty, and innovators.</p>
+                        </a>
+                        <a class="goal-card" href="#goal-3">
+                            <div class="goal-card-header">
+                                <span class="goal-card-icon"><i class="fas fa-award"></i></span>
+                                <h4>Goal 3: Merit & Need-Based Scholarships</h4>
+                            </div>
+                            <p>Full and partial scholarships to local and international students globally.</p>
+                        </a>
+                        <a class="goal-card" href="#goal-4">
+                            <div class="goal-card-header">
+                                <span class="goal-card-icon"><i class="fas fa-users"></i></span>
+                                <h4>Goal 4: Extracurricular Activities</h4>
+                            </div>
+                            <p>Open community representing all innovative members and groups.</p>
+                        </a>
+                    </div>
+                </section>
+
+                <hr>
+
+                <!-- Goal 1 -->
+                <section id="goal-1">
+                    <h2 class="section-heading">
+                        <span class="section-heading-icon"><i class="fas fa-graduation-cap"></i></span>
+                        Goal 1: Teaching and Cohorts
+                    </h2>
+                    <p class="subtitle">Cohorts learn to solve their academic problems by applying project-based challenges in their coursework.</p>
+                    <p>Our cohorts learn to solve their academic problems by applying project-based challenges in their coursework where sustainable thinking, theoretical and technical skills accompany one another in solving questions of environmental importance.</p>
+                    <h3>Objectives</h3>
+                    <ol>
+                        <li>Cohorts learn and integrate sustainability related topics into their coursework.</li>
+                        <li>ASOIU organizes and offers new degree programs, majors, minors, subjects, and certificates related to sustainability.</li>
+                        <li>ASOIU implements sustainability into project-work of any course-pack, syllabus, and program.</li>
+                        <li>ASOIU takes a comprehensive look at all aspects of sustainability including social justice and environmental stewardship.</li>
+                        <li>ASOIU cohorts get exposed to international teaching, research, and faculty through partnership programs.</li>
+                        <li>ASOIU encourages cohorts for academic and practical cooperation with international community.</li>
+                    </ol>
+                </section>
+
+                <hr>
+
+                <!-- Goal 2 -->
+                <section id="goal-2">
+                    <h2 class="section-heading">
+                        <span class="section-heading-icon"><i class="fas fa-building"></i></span>
+                        Goal 2: Faculties and Laboratory
+                    </h2>
+                    <p class="subtitle">Faculties and laboratory are major leaning points for students, academic faculty, and innovators.</p>
+                    <p>ASOIU generates its progress thanks to its blended faculty where young professionals interact with mature professorship. This blend is diversified as ASOIU adds laboratorial opportunities through dual degree partnerships with leading foreign institutions.</p>
+                    <h3>Objectives</h3>
+                    <ol>
+                        <li>Initiate and assist in conducting practical research projects aimed at neutralizing negative externalities.</li>
+                        <li>Reduce environmental impacts of conventional energy production and greenhouse gas emissions.</li>
+                        <li>Engage creative groups of innovators to maintain momentum with sustainable projects.</li>
+                        <li>Leverage all resources and facilities to support motivated innovators.</li>
+                    </ol>
+                </section>
+
+                <hr>
+
+                <!-- Goal 3 -->
+                <section id="goal-3">
+                    <h2 class="section-heading">
+                        <span class="section-heading-icon"><i class="fas fa-award"></i></span>
+                        Goal 3: Merit-Based and Need-Based Scholarships
+                    </h2>
+                    <p class="subtitle">ASOIU does not differentiate in extending opportunity to students.</p>
+                    <p>ASOIU has a long history of providing scholarships to both local and international students from all around the globe. Today ASOIU hosts international students from more than 27 countries. Merit-based scholarships cover full cost of tuition. Need-based scholarships support students in financial difficulties.</p>
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <h4>Merit-Based (S1)</h4>
+                            <p>Extended to local and international students involved in sustainability projects and innovative sustainable fields.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>Need-Based (S2)</h4>
+                            <p>Granted to students to provide financial assistance based on comprehensive, inclusive criteria and individual circumstances.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <hr>
+
+                <!-- Goal 4 -->
+                <section id="goal-4">
+                    <h2 class="section-heading">
+                        <span class="section-heading-icon"><i class="fas fa-users"></i></span>
+                        Goal 4: Extracurricular Activities
+                    </h2>
+                    <p class="subtitle">ASOIU community will be engaged in innovative projects.</p>
+                    <p>ASOIU promotes a maker culture not just in auditoriums but also in practical experiments and start-up communities. ASOIU encourages contests, competitions, hackathons and every possible engagement to help groups of innovators.</p>
+                    <h3>Objectives</h3>
+                    <ol>
+                        <li>Collect, disseminate, organize, incubate, and accelerate teams that initiate sustainable projects or take part in start-up competitions and hackathons.</li>
+                        <li>Support every initiative at every step of development that leads to future progress in sustainability.</li>
+                    </ol>
+                </section>
+
+                <hr>
+
+                <!-- Campus Life -->
+                <section id="campus-life">
+                    <h2 class="section-heading">What is it like living in our campus?</h2>
+                    <p>ASOIU has a vibrant culture of welcoming new faculty and students to its collegiate and innovative community. Living in ASOIU's campus and being involved with it academically and creatively is the most desired feature that students appreciate.</p>
+                    <p>Today's ASOIU leadership is organically mature, built through international dual degree programs and partnerships with universities from France, USA, UK and other regions.</p>
+                    <h3>How ASOIU supports Sustainability Activities</h3>
+                    <p>The Sustainability Committee defines major vectors of its annual activity by meeting with working groups from ASOIU's relevant departments. Once approved by the committee chair, objectives are transferred to needed parties to generate and confirm related tasks.</p>
+                </section>
+
+                <hr>
+
+                <!-- Sustainability Committee -->
+                <section id="sustainability-committee">
+                    <h2 class="section-heading">
+                        <span class="section-heading-icon"><i class="fas fa-users"></i></span>
+                        Sustainability Committee
+                    </h2>
+                    <p>ASOIU's administrative leadership, including the board of trustees and Rector, has set a strategic goal of developing and implementing a sustainability strategy.</p>
+                    <h3>Key Roles</h3>
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <h4>Chair of the Committee</h4>
+                            <ul style="margin: 8px 0 0 0; list-style: none; padding: 0;">
+                                <li style="margin-bottom: 4px;">Positions the institution to meet sustainability goals</li>
+                                <li style="margin-bottom: 4px;">Supervises all areas, focusing on academic aspects</li>
+                                <li>Positions ASOIU as a sustainability leader</li>
+                            </ul>
+                        </div>
+                        <div class="info-card">
+                            <h4>Co-chair of the Committee</h4>
+                            <ul style="margin: 8px 0 0 0; list-style: none; padding: 0;">
+                                <li style="margin-bottom: 4px;">Reports to the Chair</li>
+                                <li style="margin-bottom: 4px;">Collaborates to realize goals and support initiatives</li>
+                                <li>Involved in planning, implementing, and evaluating programs</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>Committee Members</h3>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Task</th>
+                                    <th>7-Year Outcome</th>
+                                    <th>Responsible</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Chairman</td>
+                                    <td>Vazeh Asgarov</td>
+                                    <td>Associate Professor, Acting Rector</td>
+                                </tr>
+                                <tr>
+                                    <td>Co-chairman</td>
+                                    <td>Gasim Mammadov</td>
+                                    <td>Associate Professor, Vice-rector for Academic affairs</td>
+                                </tr>
+                                <tr>
+                                    <td>Co-chairman</td>
+                                    <td>Rafig Jamalov</td>
+                                    <td>Associate Professor, Vice-rector for International relations</td>
+                                </tr>
+                                <tr>
+                                    <td>Co-chairman</td>
+                                    <td>Latafat Gardashova</td>
+                                    <td>Professor, Vice-rector for Scientific affairs</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Sub-committee Members</h3>
+                    <div class="members-grid">
+                        <div class="member-item"><span class="member-name">Ulviyya Abbasova</span> <span class="member-role">– Deputy Vice-rector for International Relations</span></div>
+                        <div class="member-item"><span class="member-name">Sevinj Mammadkhanova</span> <span class="member-role">– Dean of Faculty of Chemical Technology</span></div>
+                        <div class="member-item"><span class="member-name">Aydin Aliyev</span> <span class="member-role">– Dean of Faculty of Energy</span></div>
+                        <div class="member-item"><span class="member-name">Fariz Amirov</span> <span class="member-role">– Head of Organic Substances dept.</span></div>
+                        <div class="member-item"><span class="member-name">Araz Aliyev</span> <span class="member-role">– Head of Mathematics dept., HPC Center</span></div>
+                        <div class="member-item"><span class="member-name">Agamehdi Agayev</span> <span class="member-role">– Director of Museum of Mineralogy</span></div>
+                        <div class="member-item"><span class="member-name">Sakit Rasulov</span> <span class="member-role">– Head of Industrial Safety dept.</span></div>
+                        <div class="member-item"><span class="member-name">Shukur Nasirov</span> <span class="member-role">– Head of Energy Production dept.</span></div>
+                        <div class="member-item"><span class="member-name">Shahin Ismayilov</span> <span class="member-role">– Head of Oil and Gas Engineering dept.</span></div>
+                        <div class="member-item"><span class="member-name">Sakit Samadov</span> <span class="member-role">– Advisor on Industrial Cooperation</span></div>
+                        <div class="member-item"><span class="member-name">Elviz Ismayilov</span> <span class="member-role">– Director of Digital Development Center</span></div>
+                        <div class="member-item"><span class="member-name">Nigar Ismayilova</span> <span class="member-role">– QS Coordinator, HPC Center</span></div>
+                        <div class="member-item"><span class="member-name">Sabina Gurbanova</span> <span class="member-role">– Head of Intl. Relations Section</span></div>
+                        <div class="member-item"><span class="member-name">Nurida Jalilli</span> <span class="member-role">– Specialist for Intl. Projects</span></div>
+                        <div class="member-item"><span class="member-name">Shahla Ahmadova</span> <span class="member-role">– Specialist for Intl. Projects</span></div>
+                        <div class="member-item"><span class="member-name">Chingiz Garayev</span> <span class="member-role">– Specialist for Foreign Partners</span></div>
+                    </div>
+
+                    <h3>Working Groups</h3>
+                    <p><strong>Chairman: Hamzat Hudulov</strong> – BSc Oil & Gas Engineering, MSc Offshore Drilling. Junior Offshore Drilling Engineer at SOCAR AQS.</p>
+                    <p><strong>Co-chairman: Kamran Heydarov</strong> – 3rd year BSc Chemical Engineering. Founder and president of Science Club.</p>
+                    <p><strong>Co-chairman: Raul Abdullayev</strong> – BSc Chemical Engineering. Actively involved with renewable energy and SPE since 2022.</p>
+                </section>
+
+                <hr>
+
+                <!-- Annual Reporting -->
+                <section id="annual-reporting">
+                    <h2 class="section-heading">Annual Reporting</h2>
+                    <p>Annual reports are issued by the Sustainability Committee to monitor and release information on progress toward sustainability goals. The report is comprehensive and covers all areas of activity provided in the Sustainability Plan.</p>
+                </section>
+
+                <hr>
+
+                <!-- Acknowledgements -->
+                <section id="acknowledgements">
+                    <h2 class="section-heading">Acknowledgements</h2>
+                    <p>The ASOIU Sustainability Plan has come to life thanks to relevant departments (Technology of organic substances, Electric power, Petrochemical technology, Industrial safety departments, Rector's office, International cooperation office and others).</p>
+                    <p><strong>Sustainability Committee:</strong> Mr. Vazeh Asgarov (Chair) and Mr. Gasim Mammadov (Co-chair)</p>
+                </section>
+
+                <hr>
+
+                <!-- Appendix A -->
+                <section id="appendix-a">
+                    <h2 class="section-heading">Appendix A: Teaching and Cohorts</h2>
+                    <h3>Objective TC1: Sustainability Learning</h3>
+                    <p class="subtitle">Students are informed about and motivated to integrate sustainability related topics into their syllabi.</p>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Task</th>
+                                    <th>7-Year Outcome</th>
+                                    <th>Responsible</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Integrate sustainability into undergraduate education</td>
+                                    <td>Learning outcomes defined</td>
+                                    <td>Office of the Provost</td>
+                                </tr>
+                                <tr>
+                                    <td>Boost student engagement with sustainability</td>
+                                    <td>10% increase in enrolled students/year</td>
+                                    <td>Sustainability Committee</td>
+                                </tr>
+                                <tr>
+                                    <td>Identify sustainability-focused courses</td>
+                                    <td>Increase in intensive courses</td>
+                                    <td>Sustainability Committee</td>
+                                </tr>
+                                <tr>
+                                    <td>Promote double majors/minors in sustainability</td>
+                                    <td>10% increase in students/year</td>
+                                    <td>Sustainability Committee; Environmental Studies</td>
+                                </tr>
+                                <tr>
+                                    <td>Assess and promote sustainability in academic programs</td>
+                                    <td>10% increase in programs/year</td>
+                                    <td>Sustainability Committee</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Objective TC2: Global Partnership Impact</h3>
+                    <p class="subtitle">Students learn sustainability through global academic partnership programs and dual degree majors.</p>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Task</th>
+                                    <th>7-Year Outcome</th>
+                                    <th>Responsible</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Enhance student experience in sustainability area</td>
+                                    <td>All students identify significance</td>
+                                    <td>Major and Mission initiative</td>
+                                </tr>
+                                <tr>
+                                    <td>Monitor and report on project impacts</td>
+                                    <td>Program initialized to quantify impacts</td>
+                                    <td>Project-based Learning Center</td>
+                                </tr>
+                                <tr>
+                                    <td>Advance STEM academic activities</td>
+                                    <td>10% increase in student participation/year</td>
+                                    <td>Project-based Learning Center</td>
+                                </tr>
+                                <tr>
+                                    <td>Review and enhance Innovation/Entrepreneurship</td>
+                                    <td>Sustainability integrated as part of I/E</td>
+                                    <td>Innovation and Entrepreneurship</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <hr>
+
+                <!-- Appendix B -->
+                <section id="appendix-b">
+                    <h2 class="section-heading">Appendix B: Faculties and Laboratory</h2>
+                    <h3>Objective FL1: Preserving Resources</h3>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Task</th>
+                                    <th>7-Year Outcome</th>
+                                    <th>Responsible</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Create new laboratory with Warwick University</td>
+                                    <td>New laboratory created</td>
+                                    <td>Sustainability Committee; Working groups</td>
+                                </tr>
+                                <tr>
+                                    <td>Reduce paper printing</td>
+                                    <td>25% reduction in paper spending</td>
+                                    <td>IT</td>
+                                </tr>
+                                <tr>
+                                    <td>Reduce food waste and landfill waste</td>
+                                    <td>10% reduction/semester</td>
+                                    <td>Dining Services</td>
+                                </tr>
+                                <tr>
+                                    <td>Increase green purchasing</td>
+                                    <td>Green purchasing widely considered</td>
+                                    <td>Procurement</td>
+                                </tr>
+                                <tr>
+                                    <td>Reduce chemical waste disposal</td>
+                                    <td>25% reduction</td>
+                                    <td>Environmental Health and Safety</td>
+                                </tr>
+                                <tr>
+                                    <td>Continue energy efficiency projects</td>
+                                    <td>10% reduction in KwH/FTE</td>
+                                    <td>Sustainability Committee</td>
+                                </tr>
+                                <tr>
+                                    <td>Implement renewable energy systems</td>
+                                    <td>25% increase in renewable energy</td>
+                                    <td>Sustainability Committee</td>
+                                </tr>
+                                <tr>
+                                    <td>Reduce greenhouse gas emissions</td>
+                                    <td>20% reduction in Scopes 1 and 2</td>
+                                    <td>Sustainability Committee</td>
+                                </tr>
+                                <tr>
+                                    <td>Construct LEED-certified buildings</td>
+                                    <td>New construction achieves LEED ratings</td>
+                                    <td>Sustainability Committee</td>
+                                </tr>
+                                <tr>
+                                    <td>Reduce water consumption</td>
+                                    <td>15% reduction in gallons/FTE</td>
+                                    <td>Sustainability Committee</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Objective FL2: Empowering Motivated Members</h3>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Task</th>
+                                    <th>7-Year Outcome</th>
+                                    <th>Responsible</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Improve alternative transportation</td>
+                                    <td>15% reduction in SOV commutes</td>
+                                    <td>Sustainability Committee</td>
+                                </tr>
+                                <tr>
+                                    <td>Reduce fossil fuel usage</td>
+                                    <td>30% decrease in gallons</td>
+                                    <td>Provost's Office</td>
+                                </tr>
+                                <tr>
+                                    <td>Evaluate carbon emissions from travel</td>
+                                    <td>Data capture implemented</td>
+                                    <td>Sustainability Committee</td>
+                                </tr>
+                                <tr>
+                                    <td>Reduce parking footprint</td>
+                                    <td>Parking management plan implemented</td>
+                                    <td>Provost's Office</td>
+                                </tr>
+                                <tr>
+                                    <td>Increase sustainable food sources</td>
+                                    <td>5% increase in spending/year</td>
+                                    <td>Dining Services</td>
+                                </tr>
+                                <tr>
+                                    <td>Create on-campus garden</td>
+                                    <td>Garden is created</td>
+                                    <td>Dining Services</td>
+                                </tr>
+                                <tr>
+                                    <td>Promote plant-based diet choices</td>
+                                    <td>5% increase in plant-based foods</td>
+                                    <td>Dining Services</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <hr>
+
+                <!-- Appendix C -->
+                <section id="appendix-c">
+                    <h2 class="section-heading">Appendix C: Scholarships</h2>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Task</th>
+                                    <th>7-Year Outcome</th>
+                                    <th>Responsible</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Monitor sustainability-related research funding</td>
+                                    <td>10% increase/year in grants and funding</td>
+                                    <td>Office of Sponsored Programs</td>
+                                </tr>
+                                <tr>
+                                    <td>Promote research communities</td>
+                                    <td>Number of research communities increased</td>
+                                    <td>Sustainability Committee; Provost's Office</td>
+                                </tr>
+                                <tr>
+                                    <td>Develop research initiatives with design thinking</td>
+                                    <td>Internal and external engagement increased</td>
+                                    <td>Provost's Office; I/E; Sustainability Committee</td>
+                                </tr>
+                                <tr>
+                                    <td>Develop private and public sector relationships</td>
+                                    <td>Increased number of partnerships</td>
+                                    <td>Provost's Office; Sustainability Committee</td>
+                                </tr>
+                                <tr>
+                                    <td>Create sustainability expert in residence position</td>
+                                    <td>Position created and engagement in place</td>
+                                    <td>Provost's Office; Academic Departments</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <hr>
+
+                <!-- Appendix D -->
+                <section id="appendix-d">
+                    <h2 class="section-heading">Appendix D: Extracurricular Activities</h2>
+                    <h3>Objective E1: Sustainable Activities</h3>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Task</th>
+                                    <th>7-Year Outcome</th>
+                                    <th>Responsible</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Involve and educate stakeholders through sustainability activities</td>
+                                    <td>Program established</td>
+                                    <td>Sustainability Committee</td>
+                                </tr>
+                                <tr>
+                                    <td>Develop volunteer programs focused on environmental stewardship</td>
+                                    <td>Programs established</td>
+                                    <td>Student Affairs</td>
+                                </tr>
+                                <tr>
+                                    <td>Host sustainability-themed hackathons and contests</td>
+                                    <td>Annual events established</td>
+                                    <td>Innovation Center</td>
+                                </tr>
+                                <tr>
+                                    <td>Track student participation in sustainability activities</td>
+                                    <td>Tracking system implemented</td>
+                                    <td>Student Affairs</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Objective E2: Community Engagement</h3>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Task</th>
+                                    <th>7-Year Outcome</th>
+                                    <th>Responsible</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Develop sustainability awareness campaigns</td>
+                                    <td>Regular campaigns running</td>
+                                    <td>Communications</td>
+                                </tr>
+                                <tr>
+                                    <td>Partner with local organizations for outreach</td>
+                                    <td>Partnerships established</td>
+                                    <td>Community Relations</td>
+                                </tr>
+                                <tr>
+                                    <td>Create sustainability mentorship programs</td>
+                                    <td>Mentorship program active</td>
+                                    <td>Student Affairs</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Bottom CTA -->
+                <div class="download-cta">
+                    <div class="download-cta-text">
+                        <h4>Download the complete plan</h4>
+                        <p>Get the full document with all appendices in PDF format.</p>
+                    </div>
+                    <button class="btn" onclick="downloadPDF()" style="flex-shrink: 0;">
+                        <i class="fas fa-download"></i>
+                       View and Download full PDF
+                    </button>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTopBtn" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+  <footer>
+        <div class="footer-top">
+            <div class="footer-grid">
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                        <div class="footer-section brand-info">
+                            <img src="https://asoiu.edu.az/public/user/assets/img/adnsu_n_a_1.png" alt="ASOIU Logo"
+                                class="footer-logo">
+                            <p>Shaping industry leaders through engineering excellence</p>
+                            <div class="social-icons">
+                                <a href="https://www.facebook.com/Azii1920.ADNSU/?locale=ru_RU"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a
+                                    href="https://www.linkedin.com/school/azerbaijan-state-university-of-oil-and-industry/posts/?feedView=all"><i
+                                        class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.instagram.com/asoiu_officialpage/"><i
+                                        class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+
+                        <div class="footer-section marg">
+                            <h4>Quick links</h4>
+                            <ul>
+                                <li><a href="#">News</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                        <div class="footer-section contact-info">
+                            <h4>Contact</h4>
+                            <ul>
+                                <li><i class="fas fa-map-marker-alt"></i> Baku, Azadliq Avenue, 20</li>
+                                <li><i class="fas fa-envelope"></i> sustainability@asoiu.edu.az</li>
+                                <li><i class="fas fa-phone"></i> +994 12 493 45 57</li>
+                                <li><i class="fas fa-fax"></i> +994 12 598 29 41</li>
+                                <li><i class="fas fa-mail-bulk"></i> Post code: AZ1010</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+
+    </footer>
+
+    <script>
+        
+        // Table of Contents
+        const tocItems = [
+            { id: 'message-rector', label: 'Rector Message' },
+            { id: 'introduction', label: 'Introduction' },
+            { id: 'guiding-principles', label: 'Guiding Principles' },
+            { id: 'vision', label: 'Vision' },
+            { id: 'sustainability-process', label: 'Process' },
+            { id: 'result-based', label: 'Holistic Approach' },
+            { id: 'unmet-demand', label: 'Unmet Demand' },
+            { id: 'addressing-scrambles', label: 'Opportunities' },
+            { id: 'goals-objectives', label: 'Goals Overview' },
+            { id: 'goal-1', label: 'Goal 1' },
+            { id: 'goal-2', label: 'Goal 2' },
+            { id: 'goal-3', label: 'Goal 3' },
+            { id: 'goal-4', label: 'Goal 4' },
+            { id: 'campus-life', label: 'Campus Life' },
+            { id: 'sustainability-committee', label: 'Committee' },
+            { id: 'annual-reporting', label: 'Reporting' },
+            { id: 'acknowledgements', label: 'Acknowledgements' },
+            { id: 'appendix-a', label: 'Appendix A' },
+            { id: 'appendix-b', label: 'Appendix B' },
+            { id: 'appendix-c', label: 'Appendix C' },
+            { id: 'appendix-d', label: 'Appendix D' },
+        ];
+
+        // Populate TOC
+        const tocList = document.getElementById('tocList');
+        if (tocList) {
+            tocItems.forEach(item => {
+                const li = document.createElement('li');
+                li.className = 'toc-item';
+                const a = document.createElement('a');
+                a.href = `#${item.id}`;
+                a.className = 'toc-link';
+                a.textContent = item.label;
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+        }
+
+        // Active section tracking
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Remove active class from all links
+                    document.querySelectorAll('.toc-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    
+                    // Add active class to current section's link
+                    const link = document.querySelector(`a[href="#${entry.target.id}"]`);
+                    if (link) {
+                        link.classList.add('active');
+                    }
+                }
+            });
+        }, { rootMargin: '-20% 0px -60% 0px' });
+
+        // Observe all sections
+        document.querySelectorAll('section[id]').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Scroll to top functionality
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('scrollTopBtn');
+            if (btn) {
+                if (window.scrollY > 600) {
+                    btn.classList.add('visible');
+                } else {
+                    btn.classList.remove('visible');
+                }
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+      
+
+        // Initialize everything on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            initSDGGrid();
+            setupDropdowns();
+        });
+    </script>
+</body>
+</html>

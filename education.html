@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASOIU - Sustainability Education</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+     <script src="script.js" defer></script>
+    <style>
+        /* --- CUSTOM CSS --- */
+        :root {
+
+            --sustain-green: #28a745;
+            /* Official SDG Colors */
+            --sdg2: #e5243b; --sdg3: #4c9f38; --sdg6: #26bde2;
+            --sdg7: #fcc30b; --sdg9: #fd6925; --sdg11: #f99d1c;
+            --sdg12: #bf8b2e; --sdg13: #3f7e44; --sdg15: #56c02b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+       
+
+        /* Sustainability Section */
+        .edu-section { padding: 80px 0; }
+        .section-header { margin-bottom: 50px; }
+        .underline { width: 80px; height: 4px; background: var(--sustain-green); margin: 15px auto; }
+
+        /* Program Cards */
+        .program-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 40px 30px;
+            height: 100%;
+            border-bottom: 5px solid #ddd;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .program-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .program-card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .program-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        /* SDG Badges */
+        .sdg-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .sdg-badge {
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        /* Specific SDG Colors */
+        .bg-sdg2 { background: var(--sdg2); }
+        .bg-sdg3 { background: var(--sdg3); }
+        .bg-sdg6 { background: var(--sdg6); }
+        .bg-sdg7 { background: var(--sdg7); }
+        .bg-sdg9 { background: var(--sdg9); }
+        .bg-sdg11 { background: var(--sdg11); }
+        .bg-sdg12 { background: var(--sdg12); }
+        .bg-sdg13 { background: var(--sdg13); }
+        .bg-sdg15 { background: var(--sdg15); }
+
+        .btn-more {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border-bottom: 2px solid transparent;
+            transition: 0.3s;
+            width: fit-content;
+        }
+
+        .btn-more:hover { border-color: var(--primary); }
+
+        /* Animation class */
+        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s all ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .additional-info-section {
+        padding: 40px 0 80px 0;
+    }
+
+    .info-card-custom {
+        background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+        border-left: 5px solid var(--primary);
+        border-radius: 12px;
+        padding: 30px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        box-shadow: 0 10px 25px rgba(0, 74, 153, 0.08);
+    }
+
+    .info-content {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .info-icon {
+        width: 60px;
+        height: 60px;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+    }
+
+    .info-text p {
+        margin: 0;
+        font-size: 1.1rem;
+        color: #444;
+        line-height: 1.5;
+    }
+
+    .view-btn {
+        background: var(--primary);
+        color: white !important;
+        text-decoration: none;
+        padding: 12px 25px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        display: inline-block;
+        box-shadow: 0 4px 15px rgba(0, 74, 153, 0.2);
+    }
+
+    .view-btn span {
+        margin-left: 5px;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+
+    .view-btn:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 74, 153, 0.3);
+    }
+
+    /* Responsive adjustment */
+    @media (max-width: 991px) {
+        .info-card-custom {
+            flex-direction: column;
+            text-align: center;
+            padding: 30px;
+        }
+        .info-content {
+            flex-direction: column;
+        }
+    }
+    </style>
+</head>
+<body>
+
+  <header>
+
+<a href="https://asoiu.edu.az/" class="logo-section">
+
+<div class="logo-img">
+<img src="https://asoiu.edu.az/public/user/assets/img/nav_Logo_b.png" alt="ASOIU Logo">
+</div>
+
+<div class="logo-text">
+<h1>ASOIU</h1>
+<p>Sustainability</p>
+</div>
+
+</a>
+
+<div class="header-actions">
+
+
+<a href="https://asoiu.edu.az/upload/sustainability/sdg/ASOIU%20SDG%20REPORT%20ON%20SUSTAINABILITY.pdf" class="report-btn">Sustainability Report</a>
+
+<button class="menu-toggle" id="menuToggle">
+<i class="fas fa-bars"></i>
+</button>
+
+</div>
+
+</header>
+    <nav class="navbar-main">
+        <div class="navbar-rows">
+            <div class="navbar-row top">
+                <a href="Plan.html" class="nav-link">Plan</a>
+                <a href="strategy.html" class="nav-link">Strategy</a>
+                <a href="education.html" class="nav-link">Education</a>
+                <a href="research.html" class="nav-link">Research</a>
+                <a href="comitee.html" class="nav-link">Committee</a>
+                <a href="activities.html" class="nav-link">Activities</a>
+                <a href="/Pilicies/policies.html" class="nav-link">Policies</a>
+            </div>
+
+            <div class="navbar-row">
+                <a href="trainings.html" class="nav-link">Trainings</a>
+                <a href="alumni.html" class="nav-link">Alumni</a>
+                <a href="assesment.html" class="nav-link">Assessment</a>
+
+                <div class="dropdown">
+                    <button class="nav-link dropdown-trigger" id="sdgBtn">SDG's at ASOIU</button>
+                    <div class="dropdown-menu sdg-menu" id="sdgMenu">
+                        <div class="sdg-grid" id="sdgGrid"></div>
+                        <div class="sdg-footer">
+                            <a href="all_sdgs.html">View All SDGs</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="nav-link dropdown-trigger" id="rankingsBtn">Rankings</button>
+                    <div class="dropdown-menu rankings-menu" id="rankingsMenu">
+                        <a href="#" class="rankings-item">UI GreenMetric</a>
+                       <a href="/QS_Sustainability/qs_sustainability.html" class="rankings-item">QS Sustainability</a>
+                        <a href="#" class="rankings-item">THE Impact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="edu-section container">
+        <div class="section-header text-center">
+            <h2 class="display-5 fw-bold">Sustainability Education</h2>
+            <div class="underline"></div>
+            <p class="text-muted lead mx-auto" style="max-width: 1050px;">
+              The Azerbaijan State Oil and Industry University has incorporated the Sustainable Development Goals (SDGs) 
+              set by the United Nations General Assembly (UNGA) into its educational programs, marking a commitment to what
+               is commonly known as "Sustainability Education." This initiative aims to bridge the gap between education 
+               and the imperatives of sustainable development, a challenge often overlooked by the younger generation.
+                In response, there's a pressing demand in higher education to develop a sustainability curriculum that
+                 is not only comprehensive but also applicable to real-life scenarios across all academic disciplines.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 reveal">
+                <div class="program-card" style="border-color: var(--sdg7);">
+                    <div class="sdg-container">
+                        <span class="sdg-badge bg-sdg7">SDG 7</span>
+                        <span class="sdg-badge bg-sdg13">SDG 13</span>
+                    </div>
+                    <div class="card-icon"><i class="fas fa-solar-panel"></i></div>
+                    <h3>Renewable Energy</h3>
+                    <p>This major directly contributes to SDG 7 – Affordable and Clean Energy and SDG 13 – Climate Action by equipping students with 
+                        the knowledge and skills to design, implement, and optimize renewable energy systems. It focuses on 
+                        sustainable energy technologies such as solar, wind, hydro, and bioenergy, while also addressing energy 
+                        efficiency, storage, and policy. Graduates are prepared to lead the transition to a low-carbon future and 
+                        reduce reliance on fossil fuels. For detailed information on how sustainability has been integrated into the 
+                        curricula of program, you can visit the following link:</p>
+                    <a href="https://asoiu.edu.az/info_main" class="btn-more" target="_blank">Learn More <i class="fas fa-external-link-alt ms-1"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 reveal">
+                <div class="program-card" style="border-color: var(--sdg6);">
+                    <div class="sdg-container">
+                        <span class="sdg-badge bg-sdg6">SDG 6</span>
+                        <span class="sdg-badge bg-sdg13">SDG 13</span>
+                    </div>
+                    <div class="card-icon"><i class="fas fa-faucet-drip"></i></div>
+                    <h3>Water Resources Management</h3>
+                    <p>This major aligns with SDG 6 – Clean Water and Sanitation and SDG 13 – Climate Action by training students to manage, protect, and distribute water resources sustainably. The program focuses on integrated water management,
+                         wastewater treatment technologies, and the restoration of hydrological cycles, while addressing water 
+                         scarcity and flood mitigation. Graduates are prepared to design resilient infrastructure that ensures 
+                         equitable access to clean water and protects aquatic ecosystems.</p>
+                    <a href="https://www.ufaz.az/en/academic-offer/graduate-programs/msc-water-resources-and-management/" class="btn-more" target="_blank">Learn More <i class="fas fa-external-link-alt ms-1"></i></a>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 reveal">
+                <div class="program-card" style="border-color: var(--sdg2);">
+                    <div class="sdg-container">
+                        <span class="sdg-badge bg-sdg2">SDG 2</span>
+                        <span class="sdg-badge bg-sdg12">SDG 12</span>
+                    </div>
+                    <div class="card-icon"><i class="fas fa-utensils"></i></div>
+                    <h3>Food Engineering</h3>
+                    <p>Food Engineering supports SDG 2 – Zero Hunger and SDG 12 – Responsible Consumption and Production through the development 
+                        of sustainable food production technologies. The program covers resource-efficient processing, food safety, waste reduction, 
+                        and the design of eco-friendly packaging and distribution systems. It plays a crucial role in building resilient food systems
+                         that can sustainably feed growing populations. To explore how sustainability elements are embedded within the curriculum of 
+                         program, please refer to the following link:</p>
+                    <a href="https://asoiu.edu.az/chemical_technology_faculty/upload/syllabus/050635-ENG.pdf" class="btn-more" target="_blank">Learn More <i class="fas fa-external-link-alt ms-1"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 reveal">
+                <div class="program-card" style="border-color: var(--sdg15);">
+                    <div class="sdg-container">
+                        <span class="sdg-badge bg-sdg6">SDG 6</span>
+                        <span class="sdg-badge bg-sdg15">SDG 15</span>
+                    </div>
+                    <div class="card-icon"><i class="fas fa-seedling"></i></div>
+                    <h3>Ecological Engineering</h3>
+                    <p>Ecological Engineering aligns strongly with SDG 6 – Clean Water and Sanitation, 
+                        SDG 15 – Life on Land, and SDG 13 – Climate Action. 
+                        The program focuses on using natural processes for environmental restoration, 
+                        pollution control, and the design of eco-sustainable systems such as wetlands,
+                         green infrastructure, and biodiversity conservation strategies. Students are trained 
+                         to integrate engineering principles with ecological stewardship.
+                          Comprehensive information regarding the integration of sustainability into 
+                          program curricula is available at the link below:</p>
+                    <a href="https://asoiu.edu.az/chemical_technology_faculty/upload/syllabus/050606_ENG.pdf" class="btn-more" target="_blank">Learn More<i class="fas fa-external-link-alt ms-1"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 reveal">
+                <div class="program-card" style="border-color: var(--sdg9);">
+                    <div class="sdg-container">
+                        <span class="sdg-badge bg-sdg7">SDG 7</span>
+                        <span class="sdg-badge bg-sdg9">SDG 9</span>
+                    </div>
+                    <div class="card-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Energy Engineering</h3>
+                    <p>Energy Engineering contributes to SDG 7 – Affordable and Clean Energy, 
+                        SDG 9 – Industry, Innovation, and Infrastructure, and SDG 13 – Climate Action. 
+                        The curriculum emphasizes sustainable energy production, smart grid technologies, 
+                        carbon footprint reduction, and energy policy development. It enables graduates to address
+                         global energy challenges with a focus on long-term environmental and economic sustainability.
+                          For an in-depth overview of
+                         how sustainability has been incorporated into academic program, you may consult the following link:</p>
+                    <a href="https://asoiu.edu.az/power_engineering/upload/syllabus/050608_ENG_3-4.pdf" class="btn-more" target="_blank">Learn More <i class="fas fa-external-link-alt ms-1"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 reveal">
+                <div class="program-card" style="border-color: var(--sdg11);">
+                    <div class="sdg-container">
+                        <span class="sdg-badge bg-sdg3">SDG 3</span>
+                        <span class="sdg-badge bg-sdg11">SDG 11</span>
+                    </div>
+                    <div class="card-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3>Life & Safety Engineering</h3>
+                    <p>This major supports SDG 3 – Good Health and Well-being and SDG 11 – Sustainable Cities and Communities by focusing on the development of safe,
+                         sustainable working and living environments. Topics include occupational safety, disaster resilience, environmental health, and risk management.
+                          It prepares professionals to design systems and infrastructures that minimize risks and promote sustainable, secure human development. Details on
+                           the curriculum-level implementation of sustainability across the programs can be found via the following link:</p>
+                    <a href="https://asoiu.edu.az/oil_and_gas_production/upload/syllabus/050614_ENG.pdf" class="btn-more" target="_blank">Learn More <i class="fas fa-external-link-alt ms-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="additional-info-section reveal">
+    <div class="container">
+        <div class="info-card-custom">
+            <div class="info-content">
+                <div class="info-icon">
+                    <i class="fas fa-university"></i>
+                </div>
+                <div class="info-text">
+                    <p>In addition to these programs, <strong>all ASOIU specialties</strong> support sustainability through various interdisciplinary approaches, research initiatives, and campus-wide green practices.</p>
+                </div>
+            </div>
+            <div class="info-action">
+                <a href="https://asoiu.edu.az/info_main" class="view-btn">
+                    For more information: <span>View <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+    
+<footer>
+        <div class="footer-top">
+            <div class="footer-grid">
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                        <div class="footer-section brand-info">
+                            <img src="https://asoiu.edu.az/public/user/assets/img/adnsu_n_a_1.png" alt="ASOIU Logo"
+                                class="footer-logo">
+                            <p>Shaping industry leaders through engineering excellence</p>
+                            <div class="social-icons">
+                                <a href="https://www.facebook.com/Azii1920.ADNSU/?locale=ru_RU"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a
+                                    href="https://www.linkedin.com/school/azerbaijan-state-university-of-oil-and-industry/posts/?feedView=all"><i
+                                        class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.instagram.com/asoiu_officialpage/"><i
+                                        class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+
+                        <div class="footer-section marg">
+                            <h4>Quick links</h4>
+                            <ul>
+                                <li><a href="#">News</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                        <div class="footer-section contact-info">
+                            <h4>Contact</h4>
+                            <ul>
+                                <li><i class="fas fa-map-marker-alt"></i> Baku, Azadliq Avenue, 20</li>
+                                <li><i class="fas fa-envelope"></i> sustainability@asoiu.edu.az</li>
+                                <li><i class="fas fa-phone"></i> +994 12 493 45 57</li>
+                                <li><i class="fas fa-fax"></i> +994 12 598 29 41</li>
+                                <li><i class="fas fa-mail-bulk"></i> Post code: AZ1010</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+
+    </footer>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        // Initial check to reveal cards on load
+        window.onload = reveal;
+    </script>
+</body>
+</html>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QS World University Rankings: Sustainability</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js" defer></script>
+    
+    
+    <style>
+       
+        /* SIDEBAR NAVIGATION */
+        .sidebar {
+            background: #0b2f38;
+            height: 100vh;
+            padding: 30px 25px;
+            overflow-y: auto;
+        }
+
+        /* CUSTOM SCROLLBAR */
+        .sidebar::-webkit-scrollbar { width: 8px; }
+        .sidebar::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); }
+        .sidebar::-webkit-scrollbar-thumb { background: #6c757d; border-radius: 10px; }
+
+        .logo { font-weight: 700; margin-bottom: 30px; letter-spacing: 1px; text-transform: uppercase; color: white; }
+        .home-btn { border: 1px solid #ffc107; color: #ffc107; background: transparent; margin-bottom: 25px; width: 100px; font-weight: 500; }
+        .home-btn:hover { background: #ffc107; color: black; }
+
+        .menu, .submenu { list-style: none; padding-left: 0; margin-top: 5px; }
+        .submenu { display: none; padding-left: 15px; }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 10px;
+            cursor: pointer;
+            color: #cfd8dc;
+            transition: 0.2s;
+            font-size: 14px;
+            line-height: 1.4;
+            border-radius: 6px;
+        }
+
+        .menu-item:hover { color: white; background: rgba(255, 255, 255, 0.05); }
+        .arrow { font-size: 10px; margin-right: 12px; transition: 0.3s; width: 12px; text-align: center; }
+        .rotate { transform: rotate(90deg); }
+
+        .active-link {
+            background: rgba(255, 255, 255, 0.08) !important;
+            color: #ffc107 !important;
+        }
+
+        /* MAIN CONTENT AREA */
+        .main-content { padding: 10px 80px; border-radius: 8px; min-height: 400px; }
+        .title { font-size: 42px; font-weight: 700; margin-bottom: 30px; color: #000; }
+        .text { font-size: 18px; color: #555; line-height: 1.7; }
+
+        /* Add this to your main index.html style section */
+#content-display {
+    transition: all 0.3s ease; /* Smooth transition when content changes */
+    overflow: visible !important; /* Prevents the fragment from hiding content */
+    min-height: 80vh;
+}
+    </style>
+</head>
+
+<body>
+  <header>
+
+<a href="https://asoiu.edu.az/" class="logo-section">
+
+<div class="logo-img">
+<img src="https://asoiu.edu.az/public/user/assets/img/nav_Logo_b.png" alt="ASOIU Logo">
+</div>
+
+<div class="logo-text">
+<h1>ASOIU</h1>
+<p>Sustainability</p>
+</div>
+
+</a>
+
+<div class="header-actions">
+
+
+<a href="#" class="report-btn">Sustainability Report</a>
+
+<button class="menu-toggle" id="menuToggle">
+<i class="fas fa-bars"></i>
+</button>
+
+</div>
+
+</header>
+    <nav class="navbar-main">
+        <div class="navbar-rows">
+            <div class="navbar-row top">
+                <a href="Plan.html" class="nav-link">Plan</a>
+                <a href="strategy.html" class="nav-link">Strategy</a>
+                <a href="education.html" class="nav-link">Education</a>
+                <a href="research.html" class="nav-link">Research</a>
+                <a href="comitee.html" class="nav-link">Committee</a>
+                <a href="activities.html" class="nav-link">Activities</a>
+                <a href="/Pilicies/policies.html" class="nav-link">Policies</a>
+            </div>
+
+            <div class="navbar-row">
+                <a href="trainings.html" class="nav-link">Trainings</a>
+                <a href="alumni.html" class="nav-link">Alumni</a>
+                <a href="assesment.html" class="nav-link">Assessment</a>
+
+                <div class="dropdown">
+                    <button class="nav-link dropdown-trigger" id="sdgBtn">SDG's at ASOIU</button>
+                    <div class="dropdown-menu sdg-menu" id="sdgMenu">
+                        <div class="sdg-grid" id="sdgGrid"></div>
+                        <div class="sdg-footer">
+                            <a href="all_sdgs.html">View All SDGs</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="nav-link dropdown-trigger" id="rankingsBtn">Rankings</button>
+                    <div class="dropdown-menu rankings-menu" id="rankingsMenu">
+                        <a href="#" class="rankings-item">UI GreenMetric</a>
+                        <a href="/QS_Sustainability/qs_sustainability.html" class="rankings-item">QS Sustainability</a>
+                        <a href="#" class="rankings-item">THE Impact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-2 sidebar">
+            <h5 class="logo">QS<br>SUSTAINABILITY</h5>
+            <button class="btn home-btn" onclick="location.reload()">Home</button>
+
+            <ul class="menu">
+                <li>
+                    <div class="menu-item has-submenu">
+                        <i class="fa fa-chevron-right arrow"></i>
+                        <span class="fw-bold">Environmental Impact</span>
+                    </div>
+                    <ul class="submenu">
+                        <li>
+                            <div class="menu-item has-submenu">
+                                <i class="fa fa-chevron-right arrow"></i>
+                                <span>Environmental Education</span>
+                            </div>
+                            <ul class="submenu">
+                                <li class="menu-item load-content" data-file="courses_on_sustainability.html">Courses on Sustainability</li>
+                                <li class="menu-item load-content" data-file="recognized_credits.html">Courses Led to Officially Recognized Credits</li>
+                                <li class="menu-item load-content" data-file="courses_award.html">Courses Led to Award</li>
+                            </ul>
+                        </li>
+
+                         
+                         <li>
+                            <div class="menu-item has-submenu">
+                                <i class="fa fa-chevron-right arrow"></i>
+                                <span>Environmental Research</span>
+                            </div>
+                            <ul class="submenu">
+                               <div class="menu-item has-submenu">
+                                <i class="fa fa-chevron-right arrow"></i>
+                                <span>Research Center With Sustainability Focus</span>
+                            </div>
+                              <ul class="submenu">
+                             <li class="menu-item load-content" data-file="recognized_credits.html">Research Center's Dedicated Staff</li>  
+                            <li class="menu-item load-content" data-file="recognized_credits.html">Research Center's Activities</li>
+                               </ul>
+                            </ul>
+                            
+                </li>
+
+
+
+
+                 <li>
+                            <div class="menu-item has-submenu">
+                                <i class="fa fa-chevron-right arrow"></i>
+                                <span>Environmental Sustainability</span>
+                            </div>
+                           <ul class="submenu">
+                             <li class="menu-item load-content" data-file="Alumni_Impact_For_Innovation.html">Alumni Impact for Innovation</li>  
+                            <li class="menu-item load-content" data-file="Sustainable_Group_Membership.html">Sustainable Group Membership</li>
+
+                                <li class="menu-item load-content" data-file="recognized_credits.html">
+                                     <div class="menu-item has-submenu">
+                                <i class="fa fa-chevron-right arrow"></i>
+                                <span>Student Alliance For Sustainability</span>
+                            </div>
+                            <ul class="submenu">
+
+                            <li class="menu-item load-content" data-file="recognized_credits.html">Society Members</li>  
+                            <li class="menu-item load-content" data-file="recognized_credits.html">Society Activities</li>
+                            </ul>
+                                </li>
+                                
+                        </ul>
+                </li>
+                        
+
+</ul>
+
+
+                    
+                </li>
+
+                <li>
+                    <div class="menu-item has-submenu">
+                        <i class="fa fa-chevron-right arrow"></i>
+                        <span class="fw-bold">Social Impact</span>
+                    </div>
+
+                    <ul class="submenu">
+                        <li>
+                            <div class="menu-item has-submenu">
+                        <i class="fa fa-chevron-right arrow"></i>
+                        <span class="fw-bold">Employability and Opportunities</span>
+                    </div>
+                       
+                        <ul class="submenu">
+                            <li class="menu-item load-content" data-file="recognized_credits.html">Partnerships With Industry</li>
+                           
+                    </ul>
+                     </li>
+
+                     
+   <li>
+                            <div class="menu-item has-submenu">
+                        <i class="fa fa-chevron-right arrow"></i>
+                        <span class="fw-bold">Equality</span>
+                    </div>
+                       
+                        <ul class="submenu">
+                            <li class="menu-item load-content" data-file="recognized_credits.html">Women in Leadership</li>
+                           
+                    </ul>
+                     </li>
+
+                     <li>
+                            <div class="menu-item has-submenu">
+                        <i class="fa fa-chevron-right arrow"></i>
+                        <span class="fw-bold">Health and Wellbeing</span>
+                    </div>
+                       
+                        <ul class="submenu">
+                            <li class="menu-item load-content" data-file="recognized_credits.html">Healthy and Affordable Food Options on Campus</li>
+                            <li class="menu-item load-content" data-file="recognized_credits.html">Activities For Health</li>
+                           
+                    </ul>
+                     </li>
+
+                     <li>
+                            <div class="menu-item has-submenu">
+                        <i class="fa fa-chevron-right arrow"></i>
+                        <span class="fw-bold">Impact Of Education</span>
+                    </div>
+                       
+                        <ul class="submenu">
+                            <li class="menu-item load-content" data-file="recognized_credits.html">Alumni Impact For Education</li>
+                           
+                           
+                    </ul>
+                     </li>
+
+
+                        <li>
+                            <div class="menu-item has-submenu">
+                        <i class="fa fa-chevron-right arrow"></i>
+                        <span class="fw-bold">Knowledge Exchange</span>
+                    </div>
+                       
+                        <ul class="submenu">
+                            <li class="menu-item load-content" data-file="recognized_credits.html">knowladge exchange</li>
+                           <li class="menu-item load-content" data-file="recognized_credits.html">outreach and community engagement</li>
+                           
+                    </ul>
+                     </li>
+                </li>
+
+
+
+                </ul>
+
+                 <li>
+                    <div class="menu-item has-submenu">
+                        <i class="fa fa-chevron-right arrow"></i>
+                        <span class="fw-bold">Governance</span>
+                    </div>
+
+                    <ul class="submenu">
+                        <li>
+                            <div class="menu-item has-submenu">
+                        <i class="fa fa-chevron-right arrow"></i>
+                        <span class="fw-bold">Ethics Culture</span>
+                    </div>
+                       
+                        <ul class="submenu">
+                            <li class="menu-item load-content" data-file="recognized_credits.html">Clear Ethical Values</li>
+                            <li class="menu-item load-content" data-file="recognized_credits.html">
+<div class="menu-item has-submenu">
+                        <i class="fa fa-chevron-right arrow"></i>
+                        <span class="fw-bold">Ethical Compliance Office</span>
+                    </div>
+<ul class="submenu">
+<li class="menu-item load-content" data-file="recognized_credits.html">Ethics Comitee</li>
+<li class="menu-item load-content" data-file="recognized_credits.html">Office Activities</li>
+</ul>
+
+                            </li>
+                            
+
+                    </ul>
+                    <li class="menu-item load-content" data-file="recognized_credits.html">
+                                Sustainability Team
+                            </li>
+                             <li class="menu-item load-content" data-file="recognized_credits.html">
+                                Financial Report
+                             </li>
+                     </li>
+                      <li class="menu-item load-content" data-file="recognized_credits.html">
+
+                         <div class="menu-item has-submenu">
+                        <i class="fa fa-chevron-right arrow"></i>
+                        <span class="fw-bold">Student's Union</span>
+                    </div>
+                       
+                  <ul class="submenu">
+    <li class="menu-item has-submenu">
+         <div class="menu-item has-submenu">
+                        <i class="fa fa-chevron-right arrow"></i>
+                        <span class="fw-bold">STUC</span>
+                    </div>
+
+        <ul class="submenu">
+            <li class="menu-item load-content" data-file="recognized_credits.html">Activities</li>
+            <li class="menu-item load-content" data-file="recognized_credits.html">Members</li>
+        </ul>
+    </li>
+
+    <li class="menu-item has-submenu">
+         <div class="menu-item has-submenu">
+                        <i class="fa fa-chevron-right arrow"></i>
+                        <span class="fw-bold">SYO</span>
+                    </div>
+
+        <ul class="submenu">
+            <li class="menu-item load-content" data-file="recognized_credits.html">Activities</li>
+            <li class="menu-item load-content" data-file="recognized_credits.html">Members</li>
+        </ul>
+    </li>
+
+     <li class="menu-item has-submenu">
+         <div class="menu-item has-submenu">
+                        <i class="fa fa-chevron-right arrow"></i>
+                        <span class="fw-bold">SSS</span>
+                    </div>
+
+        <ul class="submenu">
+            <li class="menu-item load-content" data-file="recognized_credits.html">Activities</li>
+            <li class="menu-item load-content" data-file="recognized_credits.html">Members</li>
+        </ul>
+    </li>
+</ul>
+
+
+                      </li>
+
+
+                      <li class="menu-item load-content" data-file="recognized_credits.html">
+
+                         <div class="menu-item has-submenu">
+                        <i class="fa fa-chevron-right arrow"></i>
+                        <span class="fw-bold">EDI Office</span>
+                    </div>
+                       
+                  <ul class="submenu">
+                       <li class="menu-item load-content" data-file="recognized_credits.html">Members</li>
+                        <li class="menu-item load-content" data-file="recognized_credits.html">Activities</li>
+                            </ul>
+                      </li>
+                    </ul>
+ </li>
+                </ul>
+        </div>
+
+        <div class="col-md-10 main-content" id="content-display">
+            <h1 class="title">QS World University <br> Rankings: Sustainability</h1>
+            <p class="text">
+                This dashboard represents Azerbaijan State Oil and Industry University's (ASOIU) full commitment to global sustainability metrics.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<footer >
+    <div class="footer-top">
+        <div class="footer-grid">
+            <div class="footer-section brand-info">
+                <img src="https://asoiu.edu.az/public/user/assets/img/nav_Logo_b.png" alt="ASOIU Logo" class="footer-logo">
+                <p>Shaping industry leaders through engineering excellence</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/Azii1920.ADNSU/?locale=ru_RU"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/school/azerbaijan-state-university-of-oil-and-industry/posts/?feedView=all"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/asoiu_officialpage/"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="https://asoiu.edu.az/history">History</a></li>
+                    <li><a href="https://asoiu.edu.az/contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick links</h4>
+                <ul>
+                    <li><a href="#">News</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact-info">
+                <h4>Contact</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Baku, Azadliq Avenue, 20</li>
+                    <li><i class="fas fa-envelope"></i> sustainability@asoiu.edu.az</li>
+                    <li><i class="fas fa-phone"></i> +994 12 493 45 57</li>
+                    <li><i class="fas fa-fax"></i> +994 12 598 29 41</li>
+                    <li><i class="fas fa-mail-bulk"></i> Post code: AZ1010</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <hr class="footer-divider">
+
+   
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const displayArea = document.getElementById('content-display');
+        
+        // Default content
+        const defaultContent = `
+            <h1 class="title">QS World University <br> Rankings: Sustainability</h1>
+            <p class="text">
+                This dashboard represents Azerbaijan State Oil and Industry University's (ASOIU) full commitment to global sustainability metrics.
+            </p>
+        `;
+
+        // Toggle Submenus
+        document.querySelectorAll('.has-submenu').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const arrow = this.querySelector('.arrow');
+                const submenu = this.nextElementSibling;
+                if (submenu) {
+                    if (arrow) arrow.classList.toggle('rotate');
+                    submenu.style.display = (submenu.style.display === "block") ? "none" : "block";
+                }
+            });
+        });
+
+        // Function to load content and update URL
+        async function loadContent(fileName) {
+            try {
+                displayArea.innerHTML = '<p class="text">Loading content...</p>';
+                
+                const response = await fetch(fileName);
+                if (!response.ok) throw new Error('File not found');
+                
+                const html = await response.text();
+                displayArea.innerHTML = html;
+                
+                // Update URL with hash routing
+                const fileNameWithoutExt = fileName.replace('.html', '');
+                window.history.pushState({ file: fileName }, '', `#${fileNameWithoutExt}`);
+                
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                
+            } catch (err) {
+                displayArea.innerHTML = `
+                    <h1 class="title">Error</h1>
+                    <p class="text">Could not load <b>${fileName}</b>. Please ensure the file exists in the correct directory.</p>
+                `;
+            }
+        }
+
+        // Load Content via Fetch with routing
+        document.querySelectorAll('.load-content').forEach(link => {
+            link.addEventListener('click', async function(e) {
+                e.stopPropagation();
+                
+                // Update active state
+                document.querySelectorAll('.menu-item').forEach(el => el.classList.remove('active-link'));
+                this.classList.add('active-link');
+
+                const fileName = this.getAttribute('data-file');
+                loadContent(fileName);
+            });
+        });
+
+        // Handle browser back/forward buttons (popstate)
+        window.addEventListener('popstate', (e) => {
+            if (e.state && e.state.file) {
+                loadContent(e.state.file);
+            } else {
+                // Return to default content
+                displayArea.innerHTML = defaultContent;
+                document.querySelectorAll('.menu-item').forEach(el => el.classList.remove('active-link'));
+            }
+        });
+
+        // Check URL hash on page load and load corresponding content
+        const hash = window.location.hash.slice(1);
+        if (hash) {
+            const fileName = hash + '.html';
+            // Find and highlight the matching menu item
+            const matchingLink = document.querySelector(`[data-file="${fileName}"]`);
+            if (matchingLink) {
+                matchingLink.classList.add('active-link');
+                loadContent(fileName);
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

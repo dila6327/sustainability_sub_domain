@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASOIU - Sustainability</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+
+
+
+    <header>
+
+        <a href="https://asoiu.edu.az/" class="logo-section">
+
+            <div class="logo-img">
+                <img src="https://asoiu.edu.az/public/user/assets/img/nav_Logo_b.png" alt="ASOIU Logo">
+            </div>
+
+
+        </a>
+
+        <div class="header-actions">
+
+
+            <a href="https://asoiu.edu.az/upload/sustainability/sdg/ASOIU%20SDG%20REPORT%20ON%20SUSTAINABILITY.pdf"
+                class="report-btn">Sustainability Report</a>
+
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+    <nav class="navbar-main">
+        <div class="navbar-rows">
+            <div class="navbar-row top">
+                <a href="Plan.html" class="nav-link">Plan</a>
+                <a href="strategy.html" class="nav-link">Strategy</a>
+                <a href="education.html" class="nav-link">Education</a>
+                <a href="research.html" class="nav-link">Research</a>
+                <a href="comitee.html" class="nav-link">Committee</a>
+                <a href="activities.html" class="nav-link">Activities</a>
+                <a href="/Pilicies/policies.html" class="nav-link">Policies</a>
+            </div>
+
+            <div class="navbar-row">
+                <a href="trainings.html" class="nav-link">Trainings</a>
+                <a href="alumni.html" class="nav-link">Alumni</a>
+                <a href="assesment.html" class="nav-link">Assessment</a>
+
+                <div class="dropdown">
+                    <button class="nav-link dropdown-trigger" id="sdgBtn">SDG's at ASOIU</button>
+                    <div class="dropdown-menu sdg-menu" id="sdgMenu">
+                        <div class="sdg-grid" id="sdgGrid"></div>
+                        <div class="sdg-footer">
+                            <a href="all_sdgs.html">View All SDGs</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="nav-link dropdown-trigger" id="rankingsBtn">Rankings</button>
+                    <div class="dropdown-menu rankings-menu" id="rankingsMenu">
+                        <a href="#" class="rankings-item">UI GreenMetric</a>
+                        <a href="/QS_Sustainability/qs_sustainability.html" class="rankings-item">QS Sustainability</a>
+                        <a href="#" class="rankings-item">THE Impact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <section class="hero-slider">
+        <div class="slider-container">
+            <div class="slide active">
+                <img src="images/greenmetric.png" alt="Slide 1">
+                <a href="https://asoiu.edu.az/single_news/3480" target="_blank" class="read-more-btn">
+                    Read more
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="slide">
+                <img src="images/5-star.jpeg" alt="Slide 2">
+                <a href="https://asoiu.edu.az/single_news/3051" target="_blank" class="read-more-btn">
+                    Read more
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="slide">
+                <img src="images/reimaggine.png" alt="Slide 3">
+                <a href="https://asoiu.edu.az/single_news/3463" target="_blank" class="read-more-btn">
+                    Read more
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <button class="slider-nav-btn prev" id="prevBtn">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slider-nav-btn next" id="nextBtn">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <div class="slider-dots">
+            <button class="dot active" data-slide="0"></button>
+            <button class="dot" data-slide="1"></button>
+            <button class="dot" data-slide="2"></button>
+        </div>
+    </section>
+
+    <section class="mission-section">
+        <div class="mission-header">
+            <h2>Our Sustainability Mission</h2>
+            <p>At ASOIU, we are committed to leading the way in sustainability through integrated research, education,
+                and operational excellence. We work to create a positive impact on our environment and society.</p>
+        </div>
+
+        <div class="mission-cards">
+            <div class="mission-card">
+                <div class="mission-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Environmental Excellence</h3>
+                <p>Advancing sustainable practices across all university operations and research initiatives</p>
+            </div>
+            <div class="mission-card">
+                <div class="mission-icon">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <h3>Innovation & Research</h3>
+                <p>Leading-edge research in renewable energy, green technology, and environmental solutions</p>
+            </div>
+            <div class="mission-card">
+                <div class="mission-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>Global Responsibility</h3>
+                <p>Contributing to international sustainability goals and climate action</p>
+            </div>
+            <div class="mission-card">
+                <div class="mission-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Community Engagement</h3>
+                <p>Educating and inspiring the next generation of sustainability leaders</p>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Ready to Make a Difference?</h3>
+            <p>Join us in our mission to create a more sustainable future for all.</p>
+            <button class="cta-btn">Get Involved</button>
+        </div>
+    </section>
+
+    <section class="news-section">
+        <h2 class="section-title">Featured News & Events</h2>
+
+        <div class="news-slider-container">
+            <div class="news-cards-wrapper" id="newsCarousel">
+                <div class="news-cards" id="newsCardsContainer">
+                    <!-- news cards will be inserted dynamically by JS -->
+                </div>
+            </div>
+
+            <!-- Carousel navigation buttons -->
+            <div class="news-nav-buttons">
+                <button class="news-nav-btn" id="newsNavPrev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="news-nav-btn" id="newsNavNext">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="news.html" class="btn-all-news">
+                All news
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    What is ASOIU's commitment to sustainability?
+                    <span class="faq-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                </button>
+                <div class="faq-answer">
+                    ASOIU is committed to integrating sustainability across all aspects of university operations, from
+                    research and education to campus management and community engagement. We aim to be a leader in
+                    sustainability innovation and practice.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    How can students get involved in sustainability initiatives?
+                    <span class="faq-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                </button>
+                <div class="faq-answer">
+                    Students can participate through various programs including research projects, student clubs,
+                    community service initiatives, and sustainability-focused courses. Contact the Sustainability Office
+                    for more information.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    What are the SDGs at ASOIU?
+                    <span class="faq-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                </button>
+                <div class="faq-answer">
+                    The Sustainable Development Goals (SDGs) are 17 global goals for sustainable development adopted by
+                    the UN. ASOIU aligns its research, education, and operations with these goals to contribute to
+                    global sustainability.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    How does ASOIU measure its environmental impact?
+                    <span class="faq-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                </button>
+                <div class="faq-answer">
+                    We use various metrics and assessment tools including carbon footprint analysis, waste reduction
+                    tracking, energy efficiency monitoring, and participation in international sustainability rankings.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    What research opportunities are available?
+                    <span class="faq-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                </button>
+                <div class="faq-answer">
+                    ASOIU offers numerous research opportunities in areas such as renewable energy, green technology,
+                    environmental science, sustainable development, and climate action. Visit our Research page for more
+                    details.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    How can I contact the Sustainability Office?
+                    <span class="faq-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                </button>
+                <div class="faq-answer">
+                    You can reach the Sustainability Office through our website contact form, email at
+                    sustainability@asoiu.edu.az, or visit us in person at the main campus office during business hours.
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-grid">
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                        <div class="footer-section brand-info">
+                            <img src="https://asoiu.edu.az/public/user/assets/img/adnsu_n_a_1.png" alt="ASOIU Logo"
+                                class="footer-logo">
+                            <p>Shaping industry leaders through engineering excellence</p>
+                            <div class="social-icons">
+                                <a href="https://www.facebook.com/Azii1920.ADNSU/?locale=ru_RU"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a
+                                    href="https://www.linkedin.com/school/azerbaijan-state-university-of-oil-and-industry/posts/?feedView=all"><i
+                                        class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.instagram.com/asoiu_officialpage/"><i
+                                        class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+
+                        <div class="footer-section marg">
+                            <h4>Quick links</h4>
+                            <ul>
+                                <li><a href="#">News</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                        <div class="footer-section contact-info">
+                            <h4>Contact</h4>
+                            <ul>
+                                <li><i class="fas fa-map-marker-alt"></i> Baku, Azadliq Avenue, 20</li>
+                                <li><i class="fas fa-envelope"></i> sustainability@asoiu.edu.az</li>
+                                <li><i class="fas fa-phone"></i> +994 12 493 45 57</li>
+                                <li><i class="fas fa-fax"></i> +994 12 598 29 41</li>
+                                <li><i class="fas fa-mail-bulk"></i> Post code: AZ1010</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASOIU - Sustainability Assessment</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+<style>
+
+.main-section{
+max-width:1200px;
+margin:auto;
+padding:40px 20px;
+margin-top: 60px;
+}
+
+.section-title{
+color:#4175cf;
+margin-bottom:20px;
+text-align:center;
+}
+
+.card-stat{
+text-align:center;
+padding:25px;
+border-radius:8px;
+background:white;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
+margin-bottom:20px;
+}
+
+.card-stat h2{
+color:#0b3d91;
+}
+
+/* Growth section */
+
+.growth-section{
+margin-top:60px;
+text-align:center;
+}
+
+.growth-chart{
+display:flex;
+align-items:flex-end;
+justify-content:center;
+gap:80px;
+height:100px;
+margin-top:40px;
+border-bottom:3px solid #ddd;
+padding-bottom:10px;
+}
+
+.growth-container{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.growth-bar{
+width:90px;
+background:#0b3d91;
+border-radius:8px 8px 0 0;
+display:flex;
+align-items:flex-end;
+justify-content:center;
+color:white;
+font-weight:bold;
+padding-bottom:6px;
+height:0;
+transition:height 1.3s ease;
+}
+
+.growth-label{
+margin-top:12px;
+font-weight:600;
+font-size:16px;
+}
+
+.growth-text{
+max-width:850px;
+margin:auto;
+margin-top:15px;
+color:#444;
+}
+
+/* Bar charts */
+
+.bar-chart{
+display:flex;
+flex-direction:column;
+gap:15px;
+margin-top:20px;
+}
+
+.bar{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.bar-label{
+width:170px;
+text-align:right;
+font-weight:bold;
+}
+
+.bar-fill{
+height:25px;
+background:#0b3d91;
+border-radius:4px;
+color:white;
+padding-right:5px;
+width:0;
+transition:width 1.2s ease;
+text-align:right;
+}
+
+/* Pie chart */
+
+.pie-chart{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+justify-content:center;
+margin-top:20px;
+}
+
+.pie-segment{
+width:130px;
+height:130px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-weight:bold;
+text-align:center;
+padding:10px;
+}
+
+/* CTA */
+
+.cta{
+background:#e9f2ff;
+padding:30px;
+border-radius:8px;
+margin-top:50px;
+text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+<header>
+
+<a href="https://asoiu.edu.az/" class="logo-section">
+
+<div class="logo-img">
+<img src="https://asoiu.edu.az/public/user/assets/img/nav_Logo_b.png" alt="ASOIU Logo">
+</div>
+
+<div class="logo-text">
+<h1>ASOIU</h1>
+<p>Sustainability</p>
+</div>
+
+</a>
+
+<div class="header-actions">
+
+
+<a href="https://asoiu.edu.az/upload/sustainability/sdg/ASOIU%20SDG%20REPORT%20ON%20SUSTAINABILITY.pdf" class="report-btn">Sustainability Report</a>
+
+<button class="menu-toggle" id="menuToggle">
+<i class="fas fa-bars"></i>
+</button>
+
+</div>
+
+</header>
+
+    <nav class="navbar-main">
+        <div class="navbar-rows">
+            <div class="navbar-row top">
+                <a href="Plan.html" class="nav-link">Plan</a>
+                <a href="strategy.html" class="nav-link">Strategy</a>
+                <a href="education.html" class="nav-link">Education</a>
+                <a href="research.html" class="nav-link">Research</a>
+                <a href="comitee.html" class="nav-link">Committee</a>
+                <a href="activities.html" class="nav-link">Activities</a>
+                <a href="/Pilicies/policies.html" class="nav-link">Policies</a>
+            </div>
+
+            <div class="navbar-row">
+                <a href="trainings.html" class="nav-link">Trainings</a>
+                <a href="alumni.html" class="nav-link">Alumni</a>
+                <a href="assesment.html" class="nav-link">Assessment</a>
+
+                <div class="dropdown">
+                    <button class="nav-link dropdown-trigger" id="sdgBtn">SDG's at ASOIU</button>
+                    <div class="dropdown-menu sdg-menu" id="sdgMenu">
+                        <div class="sdg-grid" id="sdgGrid"></div>
+                        <div class="sdg-footer">
+                            <a href="all_sdgs.html">View All SDGs</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="nav-link dropdown-trigger" id="rankingsBtn">Rankings</button>
+                    <div class="dropdown-menu rankings-menu" id="rankingsMenu">
+                        <a href="#" class="rankings-item">UI GreenMetric</a>
+                        <a href="/QS_Sustainability/qs_sustainability.html" class="rankings-item">QS Sustainability</a>
+                        <a href="#" class="rankings-item">THE Impact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+<main class="main-section">
+
+<!-- Introduction -->
+
+<section>
+
+<h2 class="section-title">Sustainability Awareness Assessment</h2>
+
+<p class="growth-text">
+ASOIU regularly evaluates sustainability awareness among students and staff to measure
+the effectiveness of sustainability initiatives and educational programmes.
+</p>
+
+<p class="growth-text">
+In recent years the University has introduced sustainability training programmes
+designed to improve environmental knowledge, promote responsible behaviour,
+and encourage active participation in sustainability initiatives.
+</p>
+
+<p class="growth-text">
+The results below demonstrate a continuous increase in sustainability awareness,
+engagement in environmental activities, and adoption of sustainable practices
+across the university community.
+</p>
+
+</section>
+
+
+<!-- Participation -->
+
+<section class="row text-center mt-5">
+
+<div class="col-md-4">
+<div class="card-stat">
+<h2>800</h2>
+<p>Total Participants</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card-stat">
+<h2>550</h2>
+<p>Students</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card-stat">
+<h2>250</h2>
+<p>Staff & Faculty</p>
+</div>
+</div>
+
+</section>
+
+
+<!-- Awareness Growth -->
+
+<section class="growth-section">
+
+<h3 class="section-title">Growth of Sustainability Awareness</h3>
+
+<p class="growth-text">
+Following the introduction of sustainability training programmes,
+the University has observed a measurable increase in sustainability
+awareness among both staff and students during the past two years.
+</p>
+
+<div class="growth-chart">
+
+<div class="growth-container">
+<div class="growth-bar" data-height="55">55%</div>
+<div class="growth-label">2023</div>
+</div>
+
+<div class="growth-container">
+<div class="growth-bar" data-height="72">72%</div>
+<div class="growth-label">2024</div>
+</div>
+
+<div class="growth-container">
+<div class="growth-bar" data-height="86">86%</div>
+<div class="growth-label">2025</div>
+</div>
+
+</div>
+
+<p class="growth-text">
+This improvement reflects the positive impact of sustainability
+training programmes and awareness initiatives implemented
+across the University community.
+</p>
+
+<a href="trainings.html" class="btn btn-outline-primary mt-3">
+Learn More About Sustainability Trainings
+</a>
+
+</section>
+
+
+<!-- Knowledge -->
+
+<section class="mt-5">
+
+<h3 class="section-title">Knowledge & Awareness</h3>
+
+<div class="bar-chart" id="knowledgeChart"></div>
+
+</section>
+
+
+<!-- Attitudes -->
+
+<section class="mt-5">
+
+<h3 class="section-title">Attitudes Toward Sustainability</h3>
+
+<div class="pie-chart" id="attitudeChart"></div>
+
+</section>
+
+
+<!-- Behavior -->
+
+<section class="mt-5">
+
+<h3 class="section-title">Behavior & Practices</h3>
+
+<div class="bar-chart" id="behaviorChart"></div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<h4>Participate in the Sustainability Survey</h4>
+
+<p>
+Your participation helps the University improve sustainability initiatives
+and strengthen environmental responsibility across the campus community.
+</p>
+
+<a href="#" class="btn btn-primary">
+Take the Survey
+</a>
+
+</section>
+
+
+</main>
+
+
+<footer>
+        <div class="footer-top">
+            <div class="footer-grid">
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                        <div class="footer-section brand-info">
+                            <img src="https://asoiu.edu.az/public/user/assets/img/adnsu_n_a_1.png" alt="ASOIU Logo"
+                                class="footer-logo">
+                            <p>Shaping industry leaders through engineering excellence</p>
+                            <div class="social-icons">
+                                <a href="https://www.facebook.com/Azii1920.ADNSU/?locale=ru_RU"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a
+                                    href="https://www.linkedin.com/school/azerbaijan-state-university-of-oil-and-industry/posts/?feedView=all"><i
+                                        class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.instagram.com/asoiu_officialpage/"><i
+                                        class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+
+                        <div class="footer-section marg">
+                            <h4>Quick links</h4>
+                            <ul>
+                                <li><a href="#">News</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                        <div class="footer-section contact-info">
+                            <h4>Contact</h4>
+                            <ul>
+                                <li><i class="fas fa-map-marker-alt"></i> Baku, Azadliq Avenue, 20</li>
+                                <li><i class="fas fa-envelope"></i> sustainability@asoiu.edu.az</li>
+                                <li><i class="fas fa-phone"></i> +994 12 493 45 57</li>
+                                <li><i class="fas fa-fax"></i> +994 12 598 29 41</li>
+                                <li><i class="fas fa-mail-bulk"></i> Post code: AZ1010</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+
+    </footer>
+<script>
+
+/* Data */
+
+const knowledgeData=[
+{label:'SDGs Awareness',value:90},
+{label:'Campus Initiatives',value:65},
+{label:'Waste Management',value:70},
+{label:'Energy Conservation',value:65},
+{label:'Water Conservation',value:75}
+];
+
+const behaviorData=[
+{label:'Recycling',value:75},
+{label:'Energy Saving',value:65},
+{label:'Water Saving',value:70},
+{label:'Participating in Events',value:65},
+{label:'Sustainable Transport',value:80}
+];
+
+const attitudeData=[
+{label:'Strongly Agree',value:70,color:'#0b3d91'},
+{label:'Agree',value:10,color:'#1e5bbf'},
+{label:'Neutral',value:10,color:'#5390d9'},
+{label:'Disagree',value:5,color:'#a1c4fd'},
+{label:'Strongly Disagree',value:5,color:'#d3e3fc'}
+];
+
+
+/* Awareness growth animation */
+
+document.querySelectorAll(".growth-bar").forEach(bar=>{
+let value=bar.getAttribute("data-height");
+setTimeout(()=>{
+bar.style.height=value+"%";
+},200);
+});
+
+
+/* Bar charts */
+
+function renderBarChart(containerId,data){
+
+const container=document.getElementById(containerId);
+
+data.forEach(item=>{
+
+const bar=document.createElement('div');
+bar.classList.add('bar');
+
+bar.innerHTML=`
+<div class="bar-label">${item.label}</div>
+<div class="bar-fill">${item.value}%</div>
+`;
+
+container.appendChild(bar);
+
+setTimeout(()=>{
+bar.querySelector(".bar-fill").style.width=item.value+"%";
+},200);
+
+});
+
+}
+
+
+/* Pie chart */
+
+function renderPieChart(containerId,data){
+
+const container=document.getElementById(containerId);
+
+data.forEach(item=>{
+
+const segment=document.createElement('div');
+
+segment.classList.add('pie-segment');
+segment.style.background=item.color;
+
+segment.innerHTML=`
+<div>
+${item.label}<br>
+<span style="font-size:22px">${item.value}%</span>
+</div>
+`;
+
+container.appendChild(segment);
+
+});
+
+}
+renderBarChart("knowledgeChart",knowledgeData);
+renderBarChart("behaviorChart",behaviorData);
+renderPieChart("attitudeChart",attitudeData);
+
+</script>
+
+</body>
+</html>
+
